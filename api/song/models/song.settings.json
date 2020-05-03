@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "songs",
+  "info": {
+    "name": "song"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "lyrics": {
+      "type": "richtext"
+    },
+    "credits": {
+      "type": "richtext"
+    },
+    "explicit": {
+      "type": "boolean"
+    },
+    "recordings": {
+      "collection": "recording"
+    },
+    "videos": {
+      "collection": "video"
+    }
+  }
+}
