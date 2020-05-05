@@ -9,6 +9,26 @@
     ts-invariant "^0.4.4"
     tslib "^1.10.0"
 
+"@apollo/react-components@^3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@apollo/react-components/-/react-components-3.1.5.tgz#040d2f35ce4947747efe16f76d59dcbd797ffdaf"
+  dependencies:
+    "@apollo/react-common" "^3.1.4"
+    "@apollo/react-hooks" "^3.1.5"
+    prop-types "^15.7.2"
+    ts-invariant "^0.4.4"
+    tslib "^1.10.0"
+
+"@apollo/react-hoc@^3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@apollo/react-hoc/-/react-hoc-3.1.5.tgz#6552d2fb4aafc59fdc8f4e353358b98b89cfab6f"
+  dependencies:
+    "@apollo/react-common" "^3.1.4"
+    "@apollo/react-components" "^3.1.5"
+    hoist-non-react-statics "^3.3.0"
+    ts-invariant "^0.4.4"
+    tslib "^1.10.0"
+
 "@apollo/react-hooks@^3.1.5":
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/@apollo/react-hooks/-/react-hooks-3.1.5.tgz#7e710be52461255ae7fc0b3b9c2ece64299c10e6"
@@ -16,6 +36,14 @@
     "@apollo/react-common" "^3.1.4"
     "@wry/equality" "^0.1.9"
     ts-invariant "^0.4.4"
+    tslib "^1.10.0"
+
+"@apollo/react-ssr@^3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@apollo/react-ssr/-/react-ssr-3.1.5.tgz#53703cd493afcde567acc6d5512cab03dafce6de"
+  dependencies:
+    "@apollo/react-common" "^3.1.4"
+    "@apollo/react-hooks" "^3.1.5"
     tslib "^1.10.0"
 
 "@babel/code-frame@7.8.3", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.8.3":
@@ -4507,7 +4535,7 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^3.1.0:
+hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   dependencies:
@@ -7626,6 +7654,16 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+react-apollo@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-3.1.5.tgz#36692d393c47e7ccc37f0a885c7cc5a8b4961c91"
+  dependencies:
+    "@apollo/react-common" "^3.1.4"
+    "@apollo/react-components" "^3.1.5"
+    "@apollo/react-hoc" "^3.1.5"
+    "@apollo/react-hooks" "^3.1.5"
+    "@apollo/react-ssr" "^3.1.5"
+
 react-app-polyfill@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-1.0.6.tgz#890f8d7f2842ce6073f030b117de9130a5f385f0"
@@ -9369,7 +9407,7 @@ webpack-dev-middleware@^3.7.2:
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 
-webpack-dev-server@3.10.3:
+webpack-dev-server@3.10.3, webpack-dev-server@^3.10.3:
   version "3.10.3"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.10.3.tgz#f35945036813e57ef582c2420ef7b470e14d3af0"
   dependencies:
