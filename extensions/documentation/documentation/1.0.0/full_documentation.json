@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/03/2020 4:36:14 PM"
+    "x-generation-date": "05/15/2020 5:22:48 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3741,7 +3741,8 @@
           "id",
           "title",
           "url",
-          "length"
+          "length",
+          "index"
         ],
         "properties": {
           "id": {
@@ -3757,11 +3758,12 @@
             "type": "boolean",
             "default": true
           },
-          "explicit": {
-            "type": "boolean"
-          },
           "length": {
             "type": "time"
+          },
+          "index": {
+            "type": "integer",
+            "default": 1
           }
         }
       },
@@ -3769,7 +3771,8 @@
         "required": [
           "title",
           "url",
-          "length"
+          "length",
+          "index"
         ],
         "properties": {
           "title": {
@@ -3782,18 +3785,20 @@
             "type": "boolean",
             "default": true
           },
-          "explicit": {
-            "type": "boolean"
-          },
           "length": {
             "type": "time"
+          },
+          "index": {
+            "type": "integer",
+            "default": 1
           }
         }
       },
       "Song": {
         "required": [
           "id",
-          "title"
+          "title",
+          "slug"
         ],
         "properties": {
           "id": {
@@ -3819,7 +3824,8 @@
               "id",
               "title",
               "url",
-              "length"
+              "length",
+              "index"
             ],
             "properties": {
               "id": {
@@ -3834,11 +3840,11 @@
               "multitrack": {
                 "type": "boolean"
               },
-              "explicit": {
-                "type": "boolean"
-              },
               "length": {
                 "type": "time"
+              },
+              "index": {
+                "type": "integer"
               }
             }
           },
@@ -3865,12 +3871,19 @@
                 "type": "time"
               }
             }
+          },
+          "slug": {
+            "type": "string"
+          },
+          "custom": {
+            "type": "string"
           }
         }
       },
       "NewSong": {
         "required": [
-          "title"
+          "title",
+          "slug"
         ],
         "properties": {
           "title": {
@@ -3892,6 +3905,12 @@
             "type": "string"
           },
           "videos": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "custom": {
             "type": "string"
           }
         }

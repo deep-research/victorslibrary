@@ -1,18 +1,20 @@
 <template>
   <div class="site-title">
     <p id="title">
-      Victor's Library
+      <a href="/">
+        Victor's Library
+      </a>
     </p>
     <div id="subtitle">
       Research on Music and Religion
-    </div>  
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'SiteTitle'
-}
+  export default {
+    name: 'SiteTitle'
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -32,10 +34,16 @@ export default {
     font-weight: 600;
     font-size: 22px;
   }
-
+  
   .site-title {
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin: 20px;
+    text-align: center;
+    font-family: Lato,'helvetica neue',helvetica,arial;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
   }
 
   @media only screen and (max-width: 700px) {
@@ -48,8 +56,20 @@ export default {
       transition-delay: 0s;
       font-size: 29px;
     }
+
     #subtitle {
       font-size: 14px;
+      margin: 0;
+    }
+
+    .site-title {
+      margin: 0;
+      padding: 25px 0 25px 0;
+    }
+
+    #title {
+      margin-bottom: 2px;
+      white-space: nowrap;
     }
   }
 </style>

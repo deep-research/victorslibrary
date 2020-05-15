@@ -519,7 +519,8 @@
           "id",
           "title",
           "url",
-          "length"
+          "length",
+          "index"
         ],
         "properties": {
           "id": {
@@ -535,11 +536,12 @@
             "type": "boolean",
             "default": true
           },
-          "explicit": {
-            "type": "boolean"
-          },
           "length": {
             "type": "time"
+          },
+          "index": {
+            "type": "integer",
+            "default": 1
           }
         }
       },
@@ -547,7 +549,8 @@
         "required": [
           "title",
           "url",
-          "length"
+          "length",
+          "index"
         ],
         "properties": {
           "title": {
@@ -560,11 +563,12 @@
             "type": "boolean",
             "default": true
           },
-          "explicit": {
-            "type": "boolean"
-          },
           "length": {
             "type": "time"
+          },
+          "index": {
+            "type": "integer",
+            "default": 1
           }
         }
       }

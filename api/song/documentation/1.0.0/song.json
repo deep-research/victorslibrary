@@ -517,7 +517,8 @@
       "Song": {
         "required": [
           "id",
-          "title"
+          "title",
+          "slug"
         ],
         "properties": {
           "id": {
@@ -543,7 +544,8 @@
               "id",
               "title",
               "url",
-              "length"
+              "length",
+              "index"
             ],
             "properties": {
               "id": {
@@ -558,11 +560,11 @@
               "multitrack": {
                 "type": "boolean"
               },
-              "explicit": {
-                "type": "boolean"
-              },
               "length": {
                 "type": "time"
+              },
+              "index": {
+                "type": "integer"
               }
             }
           },
@@ -589,12 +591,19 @@
                 "type": "time"
               }
             }
+          },
+          "slug": {
+            "type": "string"
+          },
+          "custom": {
+            "type": "string"
           }
         }
       },
       "NewSong": {
         "required": [
-          "title"
+          "title",
+          "slug"
         ],
         "properties": {
           "title": {
@@ -616,6 +625,12 @@
             "type": "string"
           },
           "videos": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "custom": {
             "type": "string"
           }
         }

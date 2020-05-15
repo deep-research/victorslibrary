@@ -31,6 +31,15 @@
     },
     "videos": {
       "collection": "video"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "custom": {
+      "type": "string",
+      "unique": false
     }
   }
 }
