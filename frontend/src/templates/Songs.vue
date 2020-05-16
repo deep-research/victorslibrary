@@ -32,7 +32,7 @@
       <div>
         <h2 v-if="$page.strapiSongs.videos.length > 0">{{ videoPlural }}</h2>
         <div v-for="(video, videoCounter ) in videoData" :key="videoCounter">
-          <h3>{{ videoCounter = videoCounter + 1 }}. {{ video.title }}</h3>
+          <h3 v-if="$page.strapiSongs.videos.length > 1">{{ videoCounter = videoCounter + 1 }}. {{ video.title }}</h3>
           <video width="535" height="300" controls>
             <source :src="video.url" type="video/mp4">
             Your browser does not support the video element.

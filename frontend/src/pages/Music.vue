@@ -1,13 +1,17 @@
 <template>
   <Layout>
     <h1>Music by Reenchantment</h1>
-    <p>{{ songData }}</p>
-    <select v-model="recordingtypeFilter">
+    <select v-model="filters.recordingtype">
       <option>All Songs</option>
       <option>Recordings</option>
       <option>Demos</option>
     </select>
-    <div v-for="(song, songCounter) in songData" :key="songCounter">
+    <!-- <select v-model="filters.genre" style="margin-left: 20px">
+      <option>All Styles</option>
+      <option>Rock</option>
+      <option>Metal</option>
+    </select> -->
+    <div v-for="(song, songCounter) in createFilter" :key="songCounter">
       <h2>{{ songCounter = songCounter + 1 }}. 
         <g-link v-bind:to="'/music/' + song.slug"
         style="text-decoration: none; color: black">
@@ -49,14 +53,15 @@ export default {
         song.recordingtype = "All Songs"
 
         if (song.recordings.length > 0) {
-          song.recordingtype = "Demo"
+          song.recordingtype = "Demos"
 
           song.recordings.map((recording) => {
             if (recording.multitrack) {
-              song.recordingtype = "Recording"
+              song.recordingtype = "Recordings"
             }
           })
         }
+
         this.songData.push(song)
         this.songData.sort((a, b) => a.title.localeCompare(b.title))
       })
@@ -65,20 +70,33 @@ export default {
   data () {
     return {
       songData: [],
-      recordingtypeFilter: "All Songs"
+      filters: {
+        recordingtype: "All Songs"
+        // , genre: "All Styles"
+      }
     }
   },
   created () {
     this.fetchData()
+  },
+  computed: {
+    createFilter () {
+      // let filterList = []
+      // for (let [key, value] of Object.entries(this.filters)) {
+      //   filterList.push(`${key}: ${value}`)
+      // }
+      // return filterList
+
+      let filterData = this.songData
+      for (let [key, value] of Object.entries(this.filters)) {
+        if (value.startsWith("All")) {
+          break
+        } else {
+          filterData = filterData.filter(song => song[key] == value)
+        }
+      }
+      return filterData
+    }
   }
 }
-
-// add attributes to the song objects to filter by
-// example: song.style = rock, song.type = recording
-// Have a song list that doesn't change
-// Create a filtered song list every time there is a change in the dropdown
-// generate the filtered song list with es6 filter...
-// It filters based on attributes of objects
-// For example if we need rock songs remove any songs that don't have...
-// Rock as a value for the style attribute
 </script>
