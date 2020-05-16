@@ -572,7 +572,8 @@
             "required": [
               "id",
               "title",
-              "url"
+              "url",
+              "index"
             ],
             "properties": {
               "id": {
@@ -584,11 +585,11 @@
               "url": {
                 "type": "string"
               },
-              "explicit": {
-                "type": "boolean"
-              },
               "length": {
                 "type": "time"
+              },
+              "index": {
+                "type": "integer"
               }
             }
           },

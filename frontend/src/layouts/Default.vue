@@ -10,7 +10,7 @@
       </nav>
     </header>
     <slot/>
-    <footer>© 2020 Victor Fisher</footer>
+    <footer>© {{ new Date().getFullYear() }} Victor Fisher</footer>
     <br />
   </div>
 </template>

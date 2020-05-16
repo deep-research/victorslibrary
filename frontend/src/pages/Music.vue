@@ -1,7 +1,8 @@
 <template>
   <Layout>
     <h1>Music by Reenchantment</h1>
-    <select v-model="demoFilter">
+    <p>{{ songData }}</p>
+    <select v-model="recordingtypeFilter">
       <option>All Songs</option>
       <option>Recordings</option>
       <option>Demos</option>
@@ -44,7 +45,19 @@ export default {
     // Vue Router Data Fetching
     fetchData() {
       this.$page.songs.edges.map((edge) => {
-        this.songData.push(edge.node)
+        let song = edge.node
+        song.recordingtype = "All Songs"
+
+        if (song.recordings.length > 0) {
+          song.recordingtype = "Demo"
+
+          song.recordings.map((recording) => {
+            if (recording.multitrack) {
+              song.recordingtype = "Recording"
+            }
+          })
+        }
+        this.songData.push(song)
         this.songData.sort((a, b) => a.title.localeCompare(b.title))
       })
     }
@@ -52,7 +65,7 @@ export default {
   data () {
     return {
       songData: [],
-      demoFilter: "All Songs"
+      recordingtypeFilter: "All Songs"
     }
   },
   created () {

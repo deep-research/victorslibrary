@@ -3,6 +3,7 @@
     <div v-if="$page.strapiSongs.custom">
       <component :is="customPage" v-bind:data="$page.strapiSongs" />
     </div>
+    
     <div v-else>
       <h1 v-html="$page.strapiSongs.title" />
       <h3>
@@ -11,19 +12,37 @@
         Go to Library
         </g-link>
       </h3>
+      
       <p v-if="$page.strapiSongs.explicit">⚠️ Warning: Contains explicit content.</p>
+      
       <h2>Description:</h2>
       <VueMarkdown>{{ $page.strapiSongs.description }}</VueMarkdown>
-      <h2 v-if="$page.strapiSongs.recordings.length > 0">{{ recordingPlural }}</h2>
-      <div v-for="(recording, recordingCounter ) in recordingData" :key="recordingCounter">
-        <h3>{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
-        <audio controls>
-          <source :src="recording.url" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
+
+      <div>
+        <h2 v-if="$page.strapiSongs.recordings.length > 0">{{ recordingPlural }}</h2>
+        <div v-for="(recording, recordingCounter ) in recordingData" :key="recordingCounter">
+          <h3>{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
+          <audio controls>
+            <source :src="recording.url" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
       </div>
+      
+      <div>
+        <h2 v-if="$page.strapiSongs.videos.length > 0">{{ videoPlural }}</h2>
+        <div v-for="(video, videoCounter ) in videoData" :key="videoCounter">
+          <h3>{{ videoCounter = videoCounter + 1 }}. {{ video.title }}</h3>
+          <video width="535" height="300" controls>
+            <source :src="video.url" type="video/mp4">
+            Your browser does not support the video element.
+          </video>
+        </div>
+      </div>
+      
       <h2 v-if="$page.strapiSongs.lyrics">Lyrics:</h2>
       <VueMarkdown>{{ $page.strapiSongs.lyrics }}</VueMarkdown>
+      
       <h2>Credits:</h2>
       <VueMarkdown>{{ $page.strapiSongs.credits }}</VueMarkdown>
       <br />
@@ -46,6 +65,10 @@ query ($id: ID!) {
       index
       url
     }
+    videos {
+      url
+      title
+    }
   }
 }
 </page-query>
@@ -60,7 +83,9 @@ export default {
   data () {
     return {
       recordingData: [],
-      recordingPlural: "Recording:"
+      videoData: [],
+      recordingPlural: "Recording:",
+      videoPlural: "Video:"
     }
   },
   created () {
@@ -74,7 +99,20 @@ export default {
       if (this.recordingData.length > 1) {
         this.recordingPlural = "Recordings:"
       }
+
+      this.videoData = this.$page.strapiSongs.videos
+      this.videoData.sort((a, b) => a.index - b.index)
+      if (this.videoData.length > 1) {
+        this.videoPlural = "Videos:"
+      }
     }
   }
 }
 </script>
+
+<style>
+video {
+  max-width: 100%;
+  height: auto;
+}
+</style>
