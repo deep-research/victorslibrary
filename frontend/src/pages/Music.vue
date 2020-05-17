@@ -13,8 +13,11 @@
       <option>Rock</option>
       <option>Metal</option>
     </select> -->
+    <br /><button v-on:click="reverse" style="margin-top: 10px">Reverse</button>
     <div v-for="(song, songCounter) in createFilter" :key="songCounter">
-      <h2>{{ songCounter = songCounter + 1 }}. 
+      <h2>
+        <span v-if="reversed">{{songCounter = createFilter.length - songCounter}}. </span> 
+        <span v-else>{{ songCounter = songCounter + 1 }}. </span>
         <g-link v-bind:to="'/music/' + song.slug"
         style="text-decoration: none; color: black">
         {{ song.title }}
@@ -78,10 +81,15 @@ export default {
         this.songData.push(song)
         this.songData.sort((a, b) => a.title.localeCompare(b.title))
       })
+    },
+    reverse () {
+      this.songData.reverse()
+      this.reversed = !this.reversed
     }
   },
   data () {
     return {
+      reversed: false,
       songData: [],
       filters: {
         recordingtype: "All Songs"
