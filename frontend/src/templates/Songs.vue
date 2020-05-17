@@ -18,25 +18,29 @@
       <h2>Description:</h2>
       <VueMarkdown>{{ $page.strapiSongs.description }}</VueMarkdown>
 
-      <div>
+      <div class="audio">
         <h2 v-if="$page.strapiSongs.recordings.length > 0">{{ recordingPlural }}</h2>
         <div v-for="(recording, recordingCounter ) in recordingData" :key="recordingCounter">
-          <h3>{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
-          <audio controls>
-            <source :src="recording.url" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
+          <h3 v-if="$page.strapiSongs.recordings.length > 1">{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
+          <vue-plyr>
+            <audio :ref="`player-${recording.url}`" @play="stopOthers(recording.url)">
+              <source :src="recording.url" type="audio/mp3"/>
+              Your browser does not support the audio element.
+            </audio>
+          </vue-plyr>
         </div>
       </div>
       
-      <div>
+      <div class="video">
         <h2 v-if="$page.strapiSongs.videos.length > 0">{{ videoPlural }}</h2>
         <div v-for="(video, videoCounter ) in videoData" :key="videoCounter">
           <h3 v-if="$page.strapiSongs.videos.length > 1">{{ videoCounter = videoCounter + 1 }}. {{ video.title }}</h3>
-          <video width="535" height="300" controls>
-            <source :src="video.url" type="video/mp4">
-            Your browser does not support the video element.
-          </video>
+          <vue-plyr>
+            <video width="535" height="300" :ref="`player-${video.url}`" @play="stopOthers(video.url)" controls>
+              <source :src="video.url" type="video/mp4">
+              Your browser does not support the video element.
+            </video>
+          </vue-plyr>
         </div>
       </div>
       
@@ -85,7 +89,8 @@ export default {
       recordingData: [],
       videoData: [],
       recordingPlural: "Recording:",
-      videoPlural: "Video:"
+      videoPlural: "Video:",
+      currentTrack: null
     }
   },
   created () {
@@ -105,14 +110,42 @@ export default {
       if (this.videoData.length > 1) {
         this.videoPlural = "Videos:"
       }
+    },
+
+    stopOthers(newTrack) {
+      if (this.currentTrack) {
+        let refName = `player-${this.currentTrack}`;
+        let player = this.$refs[refName][0];
+        player.pause();
+      }
+      this.currentTrack = newTrack;
     }
   }
 }
 </script>
 
 <style>
-video {
-  max-width: 100%;
-  height: auto;
+.audio .plyr--full-ui input[type=range] {
+  color: black !important
+}
+
+.video .plyr--full-ui input[type=range] {
+  color: red !important
+}
+
+.plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
+  background: black !important
+}
+
+.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
+  background: red !important
+}
+
+.plyr__control--overlaid {
+  background: red !important
+}
+
+.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true] {
+  background: red !important
 }
 </style>

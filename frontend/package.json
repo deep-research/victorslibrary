@@ -9,6 +9,8 @@
   "dependencies": {
     "@gridsome/source-strapi": "^0.1.0",
     "gridsome": "^0.7.0",
-    "vue-markdown": "^2.2.4"
+    "plyr": "^3.6.2",
+    "vue-markdown": "^2.2.4",
+    "vue-plyr": "^6.0.4"
   }
 }

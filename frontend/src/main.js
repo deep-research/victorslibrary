@@ -4,6 +4,7 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import Vue from 'vue'
 import VueMarkdown from 'vue-markdown'
+import VuePlyr from 'vue-plyr'
 // Stop All Vue Warnings:
 // Vue.config.silent = true
 
@@ -13,6 +14,19 @@ new Vue({
   components: {
     VueMarkdown
   }
+})
+
+Vue.use(VuePlyr, {
+  plyr: {
+    fullscreen: { enabled: true },
+    settings: [],
+    resetOnEnd: false,
+    invertTime: true,
+    controls: 
+      ['play-large', 'play', 'progress', 'current-time',
+      'mute', 'volume', 'fullscreen']
+  },
+  emit: ['ended']
 })
 
 export default function (Vue, { router, head, isClient }) {

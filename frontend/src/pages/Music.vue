@@ -5,6 +5,7 @@
       <option>All Songs</option>
       <option>Recordings</option>
       <option>Demos</option>
+      <option>Other</option>
     </select>
     <!-- <select v-model="filters.genre" style="margin-left: 20px">
       <option>All Styles</option>
@@ -50,7 +51,7 @@ export default {
     fetchData() {
       this.$page.songs.edges.map((edge) => {
         let song = edge.node
-        song.recordingtype = "All Songs"
+        // song.recordingtype = "All Songs"
 
         if (song.recordings.length > 0) {
           song.recordingtype = "Demos"
@@ -60,6 +61,8 @@ export default {
               song.recordingtype = "Recordings"
             }
           })
+        } else {
+          song.recordingtype = "Other"
         }
 
         this.songData.push(song)
@@ -81,12 +84,6 @@ export default {
   },
   computed: {
     createFilter () {
-      // let filterList = []
-      // for (let [key, value] of Object.entries(this.filters)) {
-      //   filterList.push(`${key}: ${value}`)
-      // }
-      // return filterList
-
       let filterData = this.songData
       for (let [key, value] of Object.entries(this.filters)) {
         if (value.startsWith("All")) {
