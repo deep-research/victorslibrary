@@ -19,7 +19,7 @@
       <VueMarkdown>{{ $page.strapiSongs.description }}</VueMarkdown>
 
       <div class="audio" style="max-width: 550px;">
-        <h2 v-if="$page.strapiSongs.recordings.length > 0">{{ recordingPlural }}</h2>
+        <h2 v-if="$page.strapiSongs.recordings.length > 0">{{ recordingsLabel }}</h2>
         <div v-for="(recording, recordingCounter ) in recordingData" :key="recordingCounter">
           <h3 v-if="$page.strapiSongs.recordings.length > 1">{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
           <vue-plyr>
@@ -68,6 +68,7 @@ query ($id: ID!) {
       title
       index
       url
+      multitrack
     }
     videos {
       url
@@ -88,9 +89,10 @@ export default {
     return {
       recordingData: [],
       videoData: [],
-      recordingPlural: "Recording:",
+      recordingsLabel: "",
       videoPlural: "Video:",
-      currentTrack: null
+      currentTrack: null,
+      isDemo: true
     }
   },
   created () {
@@ -100,15 +102,39 @@ export default {
     // Vue Router Data Fetching
     fetchData() {
       this.recordingData = this.$page.strapiSongs.recordings
-      this.recordingData.sort((a, b) => a.index - b.index)
-      if (this.recordingData.length > 1) {
-        this.recordingPlural = "Recordings:"
+
+      if (this.recordingData.length > 0) {
+        this.recordingData.sort((a, b) => a.index - b.index)
+
+        this.recordingData.map((recording) => {
+          if (recording.multitrack) {
+            this.isDemo = false
+            console.log(recording.multitrack)
+            console.log(this.isDemo)
+          }
+        })
+
+        if (this.isDemo) {
+          if (this.recordingData.length > 1) {
+            this.recordingsLabel = "Demos:"
+          } else {
+            this.recordingsLabel = "Demo:"
+          }
+        } else {
+          if (this.recordingData.length > 1) {
+            this.recordingsLabel = "Recordings:"
+          } else {
+            this.recordingsLabel = "Recording:"
+          }
+        }
       }
 
       this.videoData = this.$page.strapiSongs.videos
-      this.videoData.sort((a, b) => a.index - b.index)
-      if (this.videoData.length > 1) {
-        this.videoPlural = "Videos:"
+      if (this.videoData.length > 0) {
+        this.videoData.sort((a, b) => a.index - b.index)
+        if (this.videoData.length > 1) {
+          this.videoPlural = "Videos:"
+        }
       }
     },
 
