@@ -116,7 +116,7 @@ export default {
       if (this.currentTrack) {
         let refName = `player-${this.currentTrack}`;
         let player = this.$refs[refName][0];
-        player.pause();
+        if (newTrack == this.currentTrack) {} else {player.pause()}
       }
       this.currentTrack = newTrack;
     }
