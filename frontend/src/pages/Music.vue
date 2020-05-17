@@ -5,7 +5,8 @@
       <option>All Songs</option>
       <option>Recordings</option>
       <option>Demos</option>
-      <option>Other</option>
+      <option>Drafts</option>
+      <option>Videos</option>
     </select>
     <!-- <select v-model="filters.genre" style="margin-left: 20px">
       <option>All Styles</option>
@@ -35,6 +36,9 @@
           recordings {
             multitrack
           }
+          videos {
+            id
+          }
         }
       }
     }
@@ -53,6 +57,12 @@ export default {
         let song = edge.node
         // song.recordingtype = "All Songs"
 
+        if (song.videos.length > 0) {
+          song.hasVideo = true
+        } else {
+          song.hasVideo = false
+        }
+
         if (song.recordings.length > 0) {
           song.recordingtype = "Demos"
 
@@ -61,8 +71,8 @@ export default {
               song.recordingtype = "Recordings"
             }
           })
-        } else {
-          song.recordingtype = "Other"
+        } else if (song.recordings.length == 0 && song.hasVideo == false) {
+          song.recordingtype = "Drafts"
         }
 
         this.songData.push(song)
@@ -88,6 +98,8 @@ export default {
       for (let [key, value] of Object.entries(this.filters)) {
         if (value.startsWith("All")) {
           break
+        } else if (value == "Videos") {
+            filterData = filterData.filter(song => song.hasVideo == true)
         } else {
           filterData = filterData.filter(song => song[key] == value)
         }

@@ -22,6 +22,7 @@ Vue.use(VuePlyr, {
     settings: [],
     resetOnEnd: false,
     invertTime: true,
+    ratio: '16:9',
     controls: 
       ['play-large', 'play', 'progress', 'current-time',
       'mute', 'volume', 'fullscreen']

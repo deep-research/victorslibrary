@@ -9,7 +9,7 @@
       <h3>
         <g-link to="/music/"
         style="text-decoration: none; color: black">
-        Go to Library
+        Go to Music Library
         </g-link>
       </h3>
       
@@ -18,7 +18,7 @@
       <h2>Description:</h2>
       <VueMarkdown>{{ $page.strapiSongs.description }}</VueMarkdown>
 
-      <div class="audio">
+      <div class="audio" style="max-width: 550px;">
         <h2 v-if="$page.strapiSongs.recordings.length > 0">{{ recordingPlural }}</h2>
         <div v-for="(recording, recordingCounter ) in recordingData" :key="recordingCounter">
           <h3 v-if="$page.strapiSongs.recordings.length > 1">{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
@@ -31,12 +31,12 @@
         </div>
       </div>
       
-      <div class="video">
+      <div class="video" style="max-width: 550px">
         <h2 v-if="$page.strapiSongs.videos.length > 0">{{ videoPlural }}</h2>
         <div v-for="(video, videoCounter ) in videoData" :key="videoCounter">
           <h3 v-if="$page.strapiSongs.videos.length > 1">{{ videoCounter = videoCounter + 1 }}. {{ video.title }}</h3>
           <vue-plyr>
-            <video width="535" height="300" :ref="`player-${video.url}`" @play="stopOthers(video.url)" controls>
+            <video :ref="`player-${video.url}`" @play="stopOthers(video.url)" controls>
               <source :src="video.url" type="video/mp4">
               Your browser does not support the video element.
             </video>
