@@ -14,11 +14,14 @@
       <option>Metal</option>
     </select> -->
     <br /><button v-on:click="reverse" style="margin-top: 10px">Reverse</button>
+    <br /><input v-model="search" placeholder="Search" style="margin-top: 10px">
+    <br /><button v-on:click="clearSearch" style="margin-top: 10px">Clear Search</button>
+    <h2>Results: {{ resultsLength }}</h2>
     <div v-for="(song, songCounter) in createFilter" :key="songCounter">
       <h2>
         <span v-if="reversed">{{songCounter = createFilter.length - songCounter}}. </span> 
         <span v-else>{{ songCounter = songCounter + 1 }}. </span>
-        <g-link v-bind:to="'/music/' + song.slug"
+        <g-link v-bind:to="'/music/' + song.slug" target="_blank"
         style="text-decoration: none; color: black">
         {{ song.title }}
         </g-link>
@@ -85,6 +88,9 @@ export default {
     reverse () {
       this.songData.reverse()
       this.reversed = !this.reversed
+    },
+    clearSearch () {
+      this.search = ""
     }
   },
   data () {
@@ -94,7 +100,9 @@ export default {
       filters: {
         recordingtype: "All Songs"
         // , genre: "All Styles"
-      }
+      },
+      search: "",
+      resultsLength: null
     }
   },
   created () {
@@ -112,6 +120,10 @@ export default {
           filterData = filterData.filter(song => song[key] == value)
         }
       }
+
+      filterData = filterData.filter(song => song.title.toLowerCase().includes(this.search.toLowerCase()))
+      
+      this.resultsLength = filterData.length
       return filterData
     }
   }
