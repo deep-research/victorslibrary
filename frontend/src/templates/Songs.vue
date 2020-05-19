@@ -9,7 +9,7 @@
       <h3>
         <g-link to="/music/"
         style="text-decoration: none; color: black">
-        Go to Music Library
+        Music by Reenchantment
         </g-link>
       </h3>
       

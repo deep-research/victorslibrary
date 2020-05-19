@@ -16,7 +16,7 @@
     <br /><button v-on:click="reverse" style="margin-top: 10px">Reverse</button>
     <br /><input v-model="search" placeholder="Search" style="margin-top: 10px">
     <br /><button v-on:click="clearSearch" style="margin-top: 10px">Clear Search</button>
-    <h2>Results: {{ resultsLength }}</h2>
+    <h3>Results: {{ resultsLength }}</h3>
     <div v-for="(song, songCounter) in createFilter" :key="songCounter">
       <h2>
         <span v-if="reversed">{{songCounter = createFilter.length - songCounter}}. </span> 
