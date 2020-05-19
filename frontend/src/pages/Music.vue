@@ -21,8 +21,7 @@
       <h2>
         <span v-if="reversed">{{songCounter = createFilter.length - songCounter}}. </span> 
         <span v-else>{{ songCounter = songCounter + 1 }}. </span>
-        <g-link v-bind:to="'/music/' + song.slug" target="_blank"
-        style="text-decoration: none; color: black">
+        <g-link v-bind:to="'/music/' + song.slug" style="text-decoration: none; color: black">
         {{ song.title }}
         </g-link>
       </h2>
@@ -131,7 +130,7 @@ export default {
 </script>
 
 <style>
-input[type='text'], input[type='number'], textarea {
+input, select, textarea, button {
   font-size: 16px;
 }
 </style>
