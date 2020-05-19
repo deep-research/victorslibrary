@@ -22,12 +22,14 @@
         <h2 v-if="$page.strapiSongs.recordings.length > 0">{{ recordingsLabel }}</h2>
         <div v-for="(recording, recordingCounter ) in recordingData" :key="recordingCounter">
           <h3 v-if="$page.strapiSongs.recordings.length > 1">{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
-          <vue-plyr>
-            <audio :ref="`player-${recording.url}`" @play="stopOthers(recording.url)">
-              <source :src="recording.url" type="audio/mp3"/>
-              Your browser does not support the audio element.
-            </audio>
-          </vue-plyr>
+          <ClientOnly>
+            <vue-plyr>
+              <audio preload="auto" :ref="`player-${recording.url}`" @play="stopOthers(recording.url)">
+                <source :src="recording.url" type="audio/mp3"/>
+                Your browser does not support the audio element.
+              </audio>
+            </vue-plyr>
+          </ClientOnly>
         </div>
       </div>
       
@@ -35,12 +37,14 @@
         <h2 v-if="$page.strapiSongs.videos.length > 0">{{ videoPlural }}</h2>
         <div v-for="(video, videoCounter ) in videoData" :key="videoCounter">
           <h3 v-if="$page.strapiSongs.videos.length > 1">{{ videoCounter = videoCounter + 1 }}. {{ video.title }}</h3>
-          <vue-plyr>
-            <video :ref="`player-${video.url}`" @play="stopOthers(video.url)" controls>
-              <source :src="video.url" type="video/mp4">
-              Your browser does not support the video element.
-            </video>
-          </vue-plyr>
+          <ClientOnly>
+            <vue-plyr>
+              <video preload="auto" :ref="`player-${video.url}`" @play="stopOthers(video.url)" controls>
+                <source :src="video.url" type="video/mp4">
+                Your browser does not support the video element.
+              </video>
+            </vue-plyr>
+          </ClientOnly>
         </div>
       </div>
       
@@ -109,8 +113,6 @@ export default {
         this.recordingData.map((recording) => {
           if (recording.multitrack) {
             this.isDemo = false
-            console.log(recording.multitrack)
-            console.log(this.isDemo)
           }
         })
 

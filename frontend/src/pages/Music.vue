@@ -129,3 +129,9 @@ export default {
   }
 }
 </script>
+
+<style>
+input[type='text'], input[type='number'], textarea {
+  font-size: 16px;
+}
+</style>

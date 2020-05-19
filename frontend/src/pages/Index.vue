@@ -9,7 +9,7 @@
     </h2>
 
     <p>
-      The music page is already working so check it out!
+      The <g-link to="/music/">music</g-link> page is working, so check it out!
     </p>
 
     <!-- <p class="home-links">
