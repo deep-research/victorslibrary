@@ -18,7 +18,7 @@
       <h2>Description:</h2>
       <VueMarkdown>{{ $page.strapiSongs.description }}</VueMarkdown>
 
-      <!-- Opportunity for modularization -->
+      <!-- Opportunity for modularization of media elements -->
       <div class="audio" style="max-width: 550px;">
         <h2 v-if="$page.strapiSongs.recordings.length > 0">{{ recordingsLabel }}</h2>
         <div v-for="(recording, recordingCounter ) in recordingData" :key="recordingCounter">

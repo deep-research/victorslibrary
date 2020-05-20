@@ -1,7 +1,7 @@
 <template>
   <Layout :bind="createFilter">
     <h1>Music by Reenchantment</h1>
-    <!-- Opportunity for modularization -->
+    <!-- Opportunity for modularization of select elements -->
     <select v-model="filters.recordingtype">
       <option>All Songs</option>
       <option>Recordings</option>
@@ -19,10 +19,15 @@
     <br /><button v-on:click="clearSearch" style="margin-top: 10px">Clear Search</button>
 
     <div v-if="isPaginated">
-      <br /><button v-on:click="prevPage" :disabled="pageNumber==0" style="margin-top: 10px">Prev Page</button>
-      <br /><button v-on:click="nextPage" :disabled="pageNumber >= pageCount -1" style="margin-top: 10px">Next Page</button>
+      <br /><button v-on:click="pagination" style="margin-top: 10px">List View</button>
+      <div v-if="pageCount > 1">
+        <br /><button v-on:click="prevPage" :disabled="pageNumber==0" style="margin-top: 10px">Prev Page</button>
+        <button v-on:click="nextPage" :disabled="pageNumber >= pageCount -1" style="margin-left: 10px">Next Page</button>
+      </div>
     </div>
-    <br /><button v-on:click="pagination" style="margin-top: 10px">Paginated</button>
+    <div v-else>
+      <br /><button v-on:click="pagination" style="margin-top: 10px">Page View</button>
+    </div>
     <br /><button v-on:click="resetData" style="margin-top: 10px">Refresh</button>
 
     <h3 v-if="filterData.length > 0">Results: {{ filterData.length }}</h3>
@@ -113,12 +118,13 @@ export default {
     },
     pagination () {
       this.isPaginated = !this.isPaginated
+      this.pageNumber = 0
     },
     clearSearch () {
       this.search = ""
     },
     nextPage(){
-        this.pageNumber++
+      this.pageNumber++
     },
     prevPage(){
       this.pageNumber--
@@ -139,7 +145,8 @@ export default {
         // , genre: "All Styles"
       },
       search: "",
-      pageNumber: 0
+      pageNumber: 0,
+      songsPerPage: 5
     }
   },
   created () {
@@ -169,22 +176,20 @@ export default {
       if (this.isReversed) {
         filterData.reverse()
       }
-
       this.pageNumber = 0
+
       this.filterData = filterData
       return this.filterData
 
       // Add filter song count as an attribute
     },
     pageCount () {
-          let length = this.filterData.length,
-              size = 5 // Songs per page
-          return Math.ceil(length / size)
+        return Math.ceil(this.filterData.length / this.songsPerPage)
     },
     paginatedData () {
-        const start = this.pageNumber * 5,
-              end = start + 5;
-        return this.filterData.slice(start, end);
+      const start = this.pageNumber * this.songsPerPage,
+            end = start + this.songsPerPage
+      return this.filterData.slice(start, end)
     }
   }
 }
