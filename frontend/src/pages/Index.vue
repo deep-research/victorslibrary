@@ -8,9 +8,9 @@
       This website is currently under construction.
     </h2>
 
-    <p>
-      The <g-link to="/music/">music</g-link> page is working, so check it out!
-    </p>
+    <h3>
+      --> The <g-link to="/music/">music</g-link> page is working, so check it out!
+    </h3>
 
     <!-- <p class="home-links">
       <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>

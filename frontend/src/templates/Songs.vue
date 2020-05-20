@@ -18,18 +18,18 @@
       <h2>Description:</h2>
       <VueMarkdown>{{ $page.strapiSongs.description }}</VueMarkdown>
 
+      <!-- Opportunity for modularization -->
       <div class="audio" style="max-width: 550px;">
         <h2 v-if="$page.strapiSongs.recordings.length > 0">{{ recordingsLabel }}</h2>
         <div v-for="(recording, recordingCounter ) in recordingData" :key="recordingCounter">
           <h3 v-if="$page.strapiSongs.recordings.length > 1">{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
-          <ClientOnly>
-            <vue-plyr>
-              <audio preload="auto" :ref="`player-${recording.url}`" @play="stopOthers(recording.url)">
-                <source :src="recording.url" type="audio/mp3"/>
-                Your browser does not support the audio element.
-              </audio>
-            </vue-plyr>
-          </ClientOnly>
+          <!-- <ClientOnly> -->
+            <!-- preload="auto" -->
+            <audio :ref="`player-${recording.url}`" @play="stopOthers(recording.url)" controls>
+              <source :src="recording.url" type="audio/mp3" />
+              Your browser does not support the audio element.
+            </audio>
+        <!-- </ClientOnly> -->
         </div>
       </div>
       
@@ -37,14 +37,13 @@
         <h2 v-if="$page.strapiSongs.videos.length > 0">{{ videoPlural }}</h2>
         <div v-for="(video, videoCounter ) in videoData" :key="videoCounter">
           <h3 v-if="$page.strapiSongs.videos.length > 1">{{ videoCounter = videoCounter + 1 }}. {{ video.title }}</h3>
-          <ClientOnly>
-            <vue-plyr>
-              <video preload="auto" :ref="`player-${video.url}`" @play="stopOthers(video.url)" controls>
-                <source :src="video.url" type="video/mp4">
-                Your browser does not support the video element.
-              </video>
-            </vue-plyr>
-          </ClientOnly>
+          <!-- <ClientOnly> -->
+            <!-- preload="auto" -->
+            <video :ref="`player-${video.url}`" @play="stopOthers(video.url)" controls>
+              <source :src="video.url" type="video/mp4">
+              Your browser does not support the video element.
+            </video>
+          <!-- </ClientOnly> -->
         </div>
       </div>
       
@@ -152,28 +151,10 @@ export default {
 }
 </script>
 
-<style>
-.audio .plyr--full-ui input[type=range] {
-  color: black !important
-}
-
-.video .plyr--full-ui input[type=range] {
-  color: red !important
-}
-
-.plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
-  background: black !important
-}
-
-.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
-  background: red !important
-}
-
-.plyr__control--overlaid {
-  background: red !important
-}
-
-.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true] {
-  background: red !important
+<style scoped>
+video {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
 }
 </style>
