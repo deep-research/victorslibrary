@@ -17,43 +17,19 @@
     <br /><button v-on:click="reverse" style="margin-top: 10px">Reverse</button>
     <br /><input v-model="search" placeholder="Search" style="margin-top: 10px">
     <br /><button v-on:click="clearSearch" style="margin-top: 10px">Clear Search</button>
-
-    <div v-if="isPaginated">
-      <br /><button v-on:click="pagination" style="margin-top: 10px">List View</button>
-      <div v-if="pageCount > 1">
-        <br /><button v-on:click="prevPage" :disabled="pageNumber==0" style="margin-top: 10px">Prev Page</button>
-        <button v-on:click="nextPage" :disabled="pageNumber >= pageCount -1" style="margin-left: 10px">Next Page</button>
-      </div>
-    </div>
-    <div v-else>
-      <br /><button v-on:click="pagination" style="margin-top: 10px">Page View</button>
-    </div>
     <br /><button v-on:click="resetData" style="margin-top: 10px">Refresh</button>
+
 
     <h3 v-if="filterData.length > 0">Results: {{ filterData.length }}</h3>
     <h3 v-else>No results.</h3>
 
-    <div v-if="isPaginated">
-      <h3 v-if="pageCount">Page: {{ pageNumber + 1 }} of {{ pageCount }}</h3>
-      <div v-for="(song, count) in paginatedData" :key="count">
-        <h2>
-          <span>{{ song.count }}. </span>
-          <g-link v-bind:to="'/music/' + song.slug" style="text-decoration: none; color: black">
-          {{ song.title }}
-          </g-link>
-        </h2>
-      </div>
-    </div>
-
-    <div v-else>
-      <div v-for="(song, count) in filterData" :key="count">
-        <h2>
-          <span>{{ song.count }}. </span>
-          <g-link v-bind:to="'/music/' + song.slug" style="text-decoration: none; color: black">
-          {{ song.title }}
-          </g-link>
-        </h2>
-      </div>
+    <div v-for="(song, count) in filterData" :key="count">
+      <h2>
+        <span>{{ song.count }}. </span>
+        <g-link v-bind:to="'/music/' + song.slug" style="text-decoration: none; color: black">
+        {{ song.title }}
+        </g-link>
+      </h2>
     </div>
     <br />
   </Layout>
@@ -116,18 +92,8 @@ export default {
     reverse () {
       this.isReversed = !this.isReversed
     },
-    pagination () {
-      this.isPaginated = !this.isPaginated
-      this.pageNumber = 0
-    },
     clearSearch () {
       this.search = ""
-    },
-    nextPage(){
-      this.pageNumber++
-    },
-    prevPage(){
-      this.pageNumber--
     },
     resetData () {
       Object.assign(this.$data, this.$options.data.call(this))
@@ -137,16 +103,13 @@ export default {
   data () {
     return {
       isReversed: false,
-      isPaginated: true,
       songData: [],
       filterData: [],
       filters: {
         recordingtype: "All Songs"
         // , genre: "All Styles"
       },
-      search: "",
-      pageNumber: 0,
-      songsPerPage: 5
+      search: ""
     }
   },
   created () {
@@ -176,20 +139,11 @@ export default {
       if (this.isReversed) {
         filterData.reverse()
       }
-      this.pageNumber = 0
 
       this.filterData = filterData
       return this.filterData
 
       // Add filter song count as an attribute
-    },
-    pageCount () {
-        return Math.ceil(this.filterData.length / this.songsPerPage)
-    },
-    paginatedData () {
-      const start = this.pageNumber * this.songsPerPage,
-            end = start + this.songsPerPage
-      return this.filterData.slice(start, end)
     }
   }
 }
