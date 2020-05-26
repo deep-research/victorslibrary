@@ -25,7 +25,10 @@ module.exports = {
       }
     },
     {
-      use: 'gridsome-plugin-tailwindcss'
+      use: 'gridsome-plugin-tailwindcss',
+      options: {
+        shouldPurge: false
+      }
     }
   ],
   templates: {

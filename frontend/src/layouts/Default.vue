@@ -3,8 +3,8 @@
     <div class="mb-auto mx-10">
       <header class="header">
         <div class="text-center my-5">
-          <g-link to="/" class="font-title text-3xl sm:text-5xl transition-all duration-100 ease-linear sm:title">{{ $static.metadata.siteName }}</g-link>
-          <p class="font-subtitle font-bold text-sm subtitle">{{ $static.metadata.siteDescription }}</p>
+          <g-link to="/" id="title" class="text-3xl sm:text-5xl transition-all duration-100 ease-linear sm:title">{{ $static.metadata.siteName }}</g-link>
+          <p id="subtitle" class="font-bold text-sm">{{ $static.metadata.siteDescription }}</p>
         </div>
         <Navbar />
       </header>
@@ -64,14 +64,22 @@ query {
 </static-query>
 
 <style>
+#title {
+  font-family: 'Merienda One', cursive;
+}
+
+#subtitle {
+  font-family: 'Gilda Display', serif;
+}
+
 @media (min-width: 640px) {
-  .subtitle {
+  #subtitle {
     font-size: 22px;
   }
 }
 
 @media (min-width: 1024px) {
-  .sidebar {
+  #sidebar {
     width: 20rem;
   }
 }

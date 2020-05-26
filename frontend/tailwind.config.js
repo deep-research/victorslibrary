@@ -1,11 +1,12 @@
 module.exports = {
-  purge: [],
+  purge: [
+    './src/**/*.html',
+    './src/**/*.vue',
+    './src/**/*.js',
+  ],
   theme: {
     extend: {
-      fontFamily: {
-        'title': ['Merienda One'],
-        'subtitle': ['Gilda Display']
-      },
+      fontFamily: {},
     },
   },
   variants: {},
