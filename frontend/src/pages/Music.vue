@@ -2,6 +2,7 @@
   <Layout :bind="createFilter">
     <h1>Music by Reenchantment</h1>
     <!-- Opportunity for modularization of select elements -->
+    <div>
     <select v-model="filters.recordingtype">
       <option>All Songs</option>
       <option>Recordings</option>
@@ -9,16 +10,24 @@
       <option>Drafts</option>
       <option>Videos</option>
     </select>
+    </div>
     <!-- <select v-model="filters.genre" style="margin-left: 20px">
       <option>All Styles</option>
       <option>Rock</option>
       <option>Metal</option>
     </select> -->
-    <br /><button v-on:click="reverse" style="margin-top: 10px">Reverse</button>
-    <br /><input v-model="search" placeholder="Search" style="margin-top: 10px">
-    <br /><button v-on:click="clearSearch" style="margin-top: 10px">Clear Search</button>
-    <br /><button v-on:click="resetData" style="margin-top: 10px">Refresh</button>
-
+    <div>
+      <button type="button" v-on:click="reverse">Reverse</button>
+    </div>
+    <div>
+      <input v-model="search" placeholder="Search">
+    </div>
+    <div>
+      <button type="button" v-on:click="clearSearch">Clear Search</button>
+    </div>
+    <div>
+      <button type="button" v-on:click="resetData">Refresh</button>
+    </div>
 
     <h3 v-if="filterData.length > 0">Results: {{ filterData.length }}</h3>
     <h3 v-else>No results.</h3>
@@ -26,12 +35,11 @@
     <div v-for="(song, count) in filterData" :key="count">
       <h2>
         <span>{{ song.count }}. </span>
-        <g-link v-bind:to="'/music/' + song.slug" style="text-decoration: none; color: black">
+        <g-link v-bind:to="'/music/' + song.slug"> <!-- style="text-decoration: none; color: black" -->
         {{ song.title }}
         </g-link>
       </h2>
     </div>
-    <br />
   </Layout>
 </template>
 
@@ -150,7 +158,7 @@ export default {
 </script>
 
 <style>
-input, select, textarea, button {
+/* input, select, textarea, button {
   font-size: 16px;
-}
+} */
 </style>

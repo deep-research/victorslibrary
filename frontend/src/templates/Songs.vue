@@ -7,10 +7,7 @@
     <div v-else>
       <h1 v-html="$page.strapiSongs.title" />
       <h3>
-        <g-link to="/music/"
-        style="text-decoration: none; color: black">
-        Music by Reenchantment
-        </g-link>
+        <g-link to="/music/">Music by Reenchantment</g-link> <!-- style="text-decoration: none; color: black" -->
       </h3>
       
       <p v-if="$page.strapiSongs.explicit">⚠️ Warning: Contains explicit content.</p>
@@ -19,7 +16,7 @@
       <VueMarkdown>{{ $page.strapiSongs.description }}</VueMarkdown>
 
       <!-- Opportunity for modularization of media elements -->
-      <div class="audio" style="max-width: 550px;">
+      <div class="audio"> <!-- style="max-width: 550px;" -->
         <h2 v-if="$page.strapiSongs.recordings.length > 0">{{ recordingsLabel }}</h2>
         <div v-for="(recording, recordingCounter ) in recordingData" :key="recordingCounter">
           <h3 v-if="$page.strapiSongs.recordings.length > 1">{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
@@ -33,7 +30,7 @@
         </div>
       </div>
       
-      <div class="video" style="max-width: 550px">
+      <div class="video"><!-- style="max-width: 550px" -->
         <h2 v-if="$page.strapiSongs.videos.length > 0">{{ videoPlural }}</h2>
         <div v-for="(video, videoCounter ) in videoData" :key="videoCounter">
           <h3 v-if="$page.strapiSongs.videos.length > 1">{{ videoCounter = videoCounter + 1 }}. {{ video.title }}</h3>
@@ -152,9 +149,9 @@ export default {
 </script>
 
 <style scoped>
-video {
+/* video {
   width: 100%;
   max-width: 500px;
   height: auto;
-}
+} */
 </style>

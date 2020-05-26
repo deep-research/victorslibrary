@@ -4,6 +4,8 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import Vue from 'vue'
 import VueMarkdown from 'vue-markdown'
+require('typeface-merienda-one')
+require('typeface-gilda-display')
 // Stop All Vue Warnings:
 // Vue.config.silent = true
 

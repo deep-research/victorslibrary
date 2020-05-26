@@ -23,6 +23,9 @@ module.exports = {
           password: ''
         }
       }
+    },
+    {
+      use: 'gridsome-plugin-tailwindcss'
     }
   ],
   templates: {

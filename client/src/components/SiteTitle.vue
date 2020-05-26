@@ -50,10 +50,10 @@
     #title {
       outline: 0;
       transition: all .1s linear;
-      transition-property: all;
+      /* transition-property: all;
       transition-duration: 0.1s;
       transition-timing-function: linear;
-      transition-delay: 0s;
+      transition-delay: 0s; */
       font-size: 29px;
     }
 
