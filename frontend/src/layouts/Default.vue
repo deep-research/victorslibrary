@@ -13,29 +13,28 @@
           <slot />
         </div>
         <div class="sidebar lg:px-3 mt-8 lg:mt-0"> <!-- bg-purple-100 -->
-          <p class="hidden lg:inline-flex lg:italic md:border lg:border-black lg:rounded-md lg:p-2 lg:pb-3 lg:pl-3">This website is currently in development.</p>
-          <p><span class="italic border border-black rounded-md p-2 pb-3 pl-3 lg:hidden">This website is currently in development.</span></p>
+          <p class="border border-black w-56 p-2 p-2 pb-3 pl-3 italic">This website is currently in development.</p>
           <br />
           <h1 class="font-bold">Recent Posts</h1>
-          <p class="hover:underline">The Philosophical and Spiritual Value of Music</p>
-          <p class="hover:underline">She Likes It Heavy Review</p>
-          <p class="hover:underline">Chicago Doom Confederacy Review</p>
-          <p class="hover:underline">The Spirit of the Band</p>
-          <p class="hover:underline">About</p>
+          <p>The Philosophical and Spiritual Value of Music</p>
+          <p>She Likes It Heavy Review</p>
+          <p>Chicago Doom Confederacy Review</p>
+          <p>The Spirit of the Band</p>
+          <p>About</p>
           <br />
           <h1 class="font-bold">Categories</h1>
-          <p><span class="hover:underline">December 2019</span> (1)</p>
-          <p><span class="hover:underline">November 2019</span> (1)</p>
-          <p><span class="hover:underline">October 2019</span> (1)</p>
-          <p><span class="hover:underline">September 2019</span> (12)</p>
-          <p><span class="hover:underline">December 2018</span> (1)</p>
+          <p><span >December 2019</span> (1)</p>
+          <p><span >November 2019</span> (1)</p>
+          <p><span >October 2019</span> (1)</p>
+          <p><span >September 2019</span> (12)</p>
+          <p><span >December 2018</span> (1)</p>
           <br />
           <h1 class="font-bold">Links</h1>
-          <p class="hover:underline">Bandcamp</p>
-          <p class="hover:underline">Twitter</p>
-          <p class="hover:underline">Facebook</p>
-          <p class="hover:underline">Instagram</p>
-          <p class="hover:underline">YouTube</p>
+          <p>Bandcamp</p>
+          <p>Twitter</p>
+          <p>Facebook</p>
+          <p>Instagram</p>
+          <p>YouTube</p>
         </div>
       </div>
     </div>
