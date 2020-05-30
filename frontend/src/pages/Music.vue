@@ -123,6 +123,31 @@ export default {
   created () {
     this.fetchData()
   },
+  mounted() {
+    if (sessionStorage.isReversed) {
+      this.isReversed = sessionStorage.isReversed
+    }
+    if (sessionStorage.search) {
+      this.search = sessionStorage.search
+    }
+    if (sessionStorage.filters) {
+      this.filters = JSON.parse(sessionStorage.filters)
+    }
+  },
+  watch: {
+    isReversed(value) {
+      sessionStorage.isReversed = value
+    },
+    search(value) {
+      sessionStorage.search = value
+    },
+    filters: {
+      handler(value){
+        sessionStorage.filters = JSON.stringify(value)
+      },
+      deep: true
+    }
+  },
   computed: {
     createFilter () {
       let filterData = this.songData
