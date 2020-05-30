@@ -9,7 +9,7 @@
         <Navbar />
       </header>
       <div class="lg:flex lg:flex-row lg:justify-between md:mt-5">
-        <div class="mb-5 lg:mb-0 lg:flex-grow lg:px-3 mx-10 lg:ml-10 lg:mr-5"> <!-- bg-blue-100 -->
+        <div id="slot-container" class="mb-5 lg:mb-0 lg:flex-grow lg:px-3 mx-10 lg:ml-10 lg:mr-5"> <!-- bg-blue-100 -->
           <slot />
         </div>
         <div class="sidebar lg:px-3 mx-10 lg:mr-10 lg:ml-5"> <!-- bg-purple-100 -->
@@ -84,6 +84,10 @@ query {
   #sidebar {
     width: 20rem;
   }
+}
+
+#slot-container:empty {
+  margin-bottom: 0;
 }
 
 /* body {

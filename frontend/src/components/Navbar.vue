@@ -3,7 +3,7 @@
     <!-- https://tailwindcomponents.com/component/responsive-navbar-with-dropdown -->
     <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
       <div class="flex flex-col max-w-screen-xl px-6 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-        <div class="px-4 mb-5 flex flex-row items-center justify-between md:hidden">
+        <div :class="{'mb-5': !mobile_open}" class="px-4 flex flex-row items-center justify-between md:hidden">
           <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline md:hidden">Menu</a>
           <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" v-on:click="mobile_open = !mobile_open">
             <svg  fill="black" viewBox="0 0 20 20" class="w-6 h-6"> <!-- fill="currentColor" -->
@@ -19,8 +19,8 @@
           <g-link class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/music/">Music</g-link> -->
 
           <!-- CURRENT LINKS -->
-          <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/')}" class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/">Home</g-link>
-          <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/music/')}" class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/music/">Music</g-link>   
+          <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/')}" class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/">Home</g-link>
+          <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/music/')}" class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/music/">Music</g-link>   
 
           <!-- DROPDOWN -->
           <!-- <div v-on-clickaway="dropdown_closed" class="relative">

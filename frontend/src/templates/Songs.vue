@@ -49,7 +49,6 @@
       
       <h2>Credits:</h2>
       <VueMarkdown>{{ $page.strapiSongs.credits }}</VueMarkdown>
-      <br />
     </div>
   </Layout>
 </Template> 
