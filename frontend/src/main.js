@@ -6,6 +6,7 @@ import Vue from 'vue'
 import VueMarkdown from 'vue-markdown'
 require('typeface-merienda-one')
 require('typeface-gilda-display')
+require('typeface-merriweather')
 // Stop All Vue Warnings:
 // Vue.config.silent = true
 

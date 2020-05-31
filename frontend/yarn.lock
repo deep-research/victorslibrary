@@ -8963,6 +8963,11 @@ typeface-merienda-one@^0.0.72:
   resolved "https://registry.yarnpkg.com/typeface-merienda-one/-/typeface-merienda-one-0.0.72.tgz#d0f6e57a593dbb2ced6c8edff40f32cec58bb9cb"
   integrity sha512-rYABm9SlrvczX8RL4Mh7rIyBrBS5Y4OrQlTWCSBib7E/y8Lo/ZJCYlE6AFavx3LhVOyyRmoXax4SWzQjMXX73w==
 
+typeface-merriweather@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-merriweather/-/typeface-merriweather-0.0.72.tgz#2b990f5293252052d51d170c82d3892319ff0555"
+  integrity sha512-gO0+fcZ1fTyKUsYY1ltYOOTI6FmBGeEdyIfeQg9NL8aInndk0feiJJVJsKHm/DiyYrnQEezraAQhz/KQoqMGtw==
+
 uc.micro@^1.0.1:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.6.tgz#9c411a802a409a91fc6cf74081baba34b24499ac"

@@ -2,9 +2,11 @@
   <div class="layout flex flex-col h-screen justify-between">
     <div class="mb-auto">
       <header class="header">
-        <div class="text-center my-5">
+        <div id="title-container" class="text-center my-5">
           <g-link to="/" id="title" class="text-3xl sm:text-5xl transition-all duration-100 ease-linear sm:title hover:no-underline">{{ $static.metadata.siteName }}</g-link>
-          <p id="subtitle" class="font-bold text-sm">{{ $static.metadata.siteDescription }}</p>
+          <div id="subtitle-container">
+            <p id="subtitle" class="font-bold text-sm">{{ $static.metadata.siteDescription }}</p>
+          </div>
         </div>
         <Navbar />
       </header>
@@ -75,11 +77,19 @@ query {
 @import './default.css';
 
 #title {
-  font-family: 'Merienda One', cursive;
+  font-family: 'Merienda One';
 }
 
 #subtitle {
-  font-family: 'Gilda Display', serif;
+  font-family: 'Gilda Display';
+}
+
+#subtitle-container {
+  font-family: Lato,'helvetica neue',helvetica,arial;
+}
+
+#title-container {
+  font-family: Merriweather,lato,'helvetica neue',helvetica,arial;
 }
 
 @media (min-width: 640px) {
