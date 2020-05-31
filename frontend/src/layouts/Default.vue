@@ -3,7 +3,7 @@
     <div class="mb-auto">
       <header class="header">
         <div class="text-center my-5">
-          <g-link to="/" id="title" class="text-3xl sm:text-5xl transition-all duration-100 ease-linear sm:title">{{ $static.metadata.siteName }}</g-link>
+          <g-link to="/" id="title" class="text-3xl sm:text-5xl transition-all duration-100 ease-linear sm:title hover:no-underline">{{ $static.metadata.siteName }}</g-link>
           <p id="subtitle" class="font-bold text-sm">{{ $static.metadata.siteDescription }}</p>
         </div>
         <Navbar />
@@ -15,28 +15,34 @@
         <div class="sidebar lg:px-3 mx-10 lg:mr-10 lg:ml-5"> <!-- bg-purple-100 -->
           <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic">This website is currently in development.</p>
           <div class="mb-5">
-            <h1 class="font-bold">Recent Posts</h1>
-            <p>The Philosophical and Spiritual Value of Music</p>
-            <p>She Likes It Heavy Review</p>
-            <p>Chicago Doom Confederacy Review</p>
-            <p>The Spirit of the Band</p>
-            <p>About</p>
+            <h1>Recent Posts</h1>
+            <ul>
+              <li>The Philosophical and Spiritual Value of Music</li>
+              <li>She Likes It Heavy Review</li>
+              <li>Chicago Doom Confederacy Review</li>
+              <li>The Spirit of the Band</li>
+              <li>About</li>
+            </ul>
           </div>
           <div class="mb-5">
-            <h1 class="font-bold">Categories</h1>
-            <p><span >December 2019</span> (1)</p>
-            <p><span >November 2019</span> (1)</p>
-            <p><span >October 2019</span> (1)</p>
-            <p><span >September 2019</span> (12)</p>
-            <p><span >December 2018</span> (1)</p>
+            <h1>Categories</h1>
+            <ul>
+              <li><span >December 2019</span> (1)</li>
+              <li><span >November 2019</span> (1)</li>
+              <li><span >October 2019</span> (1)</li>
+              <li><span >September 2019</span> (12)</li>
+              <li><span >December 2018</span> (1)</li>
+            </ul>
           </div>
           <div>
-            <h1 class="font-bold">Links</h1>
-            <p>Bandcamp</p>
-            <p>Twitter</p>
-            <p>Facebook</p>
-            <p>Instagram</p>
-            <p>YouTube</p>
+            <h1>Links</h1>
+            <ul>
+              <li>Bandcamp</li>
+              <li>Twitter</li>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>YouTube</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -66,6 +72,8 @@ query {
 </static-query>
 
 <style>
+@import './default.css';
+
 #title {
   font-family: 'Merienda One', cursive;
 }
