@@ -8953,10 +8953,20 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-amiko@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-amiko/-/typeface-amiko-0.0.72.tgz#916e8f8990ff3a2c64954edab10260d12aefac2b"
+  integrity sha512-TrbeWnsiSDMFp0+yHbrJPqIpiweUuA+ni0V5G9pmSB1BU8RI8k3+xFCS/ZKLAB3BIspagk5GOYXMMfuKSKqXaw==
+
 typeface-gilda-display@^0.0.72:
   version "0.0.72"
   resolved "https://registry.yarnpkg.com/typeface-gilda-display/-/typeface-gilda-display-0.0.72.tgz#bc608688d4e41b6c3ea88b521f2ab46f99dbe864"
   integrity sha512-4PS2PGJrc5L8EECAC8uIcdDdmFm5qQ/VrOTojpU/ZHRWTnJcXB9n1OxgFMKF2qN/Rukur0/bv5mhM3tcDlNTAQ==
+
+typeface-lato@^0.0.75:
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/typeface-lato/-/typeface-lato-0.0.75.tgz#8aa11c5611dc38416837c089b265a2abd1f7dd31"
+  integrity sha512-iA5uJD4PSTyIE4BDiSOexQeXkDkiJuX4Hu3wh3saJ06EB2TvJayab1Lbbmqq2je/LQv7KCQZHZmC0k4hedd8sw==
 
 typeface-merienda-one@^0.0.72:
   version "0.0.72"

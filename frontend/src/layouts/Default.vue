@@ -2,11 +2,9 @@
   <div class="layout flex flex-col h-screen justify-between">
     <div class="mb-auto">
       <header class="header">
-        <div id="title-container" class="text-center my-5">
+        <div class="text-center my-5">
           <g-link to="/" id="title" class="text-3xl sm:text-5xl transition-all duration-100 ease-linear sm:title hover:no-underline">{{ $static.metadata.siteName }}</g-link>
-          <div id="subtitle-container">
-            <p id="subtitle" class="font-bold text-sm">{{ $static.metadata.siteDescription }}</p>
-          </div>
+          <p id="subtitle" class="font-bold text-sm mb-5">{{ $static.metadata.siteDescription }}</p>
         </div>
         <Navbar />
       </header>
@@ -15,9 +13,9 @@
           <slot />
         </div>
         <div class="sidebar lg:px-3 mx-10 lg:mr-10 lg:ml-5"> <!-- bg-purple-100 -->
-          <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic">This website is currently in development.</p>
-          <div class="mb-5">
-            <h1>Recent Posts</h1>
+          <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic font-sans">This website is currently in development.</p>
+          <div class="my-5">
+            <h2>Recent Posts</h2>
             <ul>
               <li>The Philosophical and Spiritual Value of Music</li>
               <li>She Likes It Heavy Review</li>
@@ -27,7 +25,7 @@
             </ul>
           </div>
           <div class="mb-5">
-            <h1>Categories</h1>
+            <h2>Categories</h2>
             <ul>
               <li><span >December 2019</span> (1)</li>
               <li><span >November 2019</span> (1)</li>
@@ -37,7 +35,7 @@
             </ul>
           </div>
           <div>
-            <h1>Links</h1>
+            <h2>Links</h2>
             <ul>
               <li>Bandcamp</li>
               <li>Twitter</li>
@@ -77,19 +75,15 @@ query {
 @import './default.css';
 
 #title {
-  font-family: 'Merienda One';
+  font-family: 'Merienda One', Merriweather, lato,'helvetica neue', helvetica, arial;
 }
 
 #subtitle {
-  font-family: 'Gilda Display';
+  font-family: 'Gilda Display', lato,'helvetica neue', helvetica, arial;
 }
 
-#subtitle-container {
-  font-family: Lato,'helvetica neue',helvetica,arial;
-}
-
-#title-container {
-  font-family: Merriweather,lato,'helvetica neue',helvetica,arial;
+p {
+  font-family: 'Amiko','lato', lato, 'helvetica neue', helvetica, arial, sans-serif;
 }
 
 @media (min-width: 640px) {
@@ -99,7 +93,7 @@ query {
 }
 
 @media (min-width: 1024px) {
-  #sidebar {
+  .sidebar {
     width: 20rem;
   }
 }

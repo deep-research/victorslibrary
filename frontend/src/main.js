@@ -7,6 +7,8 @@ import VueMarkdown from 'vue-markdown'
 require('typeface-merienda-one')
 require('typeface-gilda-display')
 require('typeface-merriweather')
+require('typeface-amiko')
+require('typeface-lato')
 // Stop All Vue Warnings:
 // Vue.config.silent = true
 
