@@ -9,10 +9,10 @@
         <Navbar />
       </header>
       <div class="lg:flex lg:flex-row lg:justify-between md:mt-5">
-        <div class="md:mx-16 mb-5 lg:mb-0 lg:flex-grow lg:px-3 mx-10 lg:ml-10 lg:mr-5 lg:ml-16"> <!-- bg-blue-100 -->
+        <div id="slot-container" class="md:mx-16 mb-5 lg:mb-0 lg:flex-grow mx-10 lg:mr-8 lg:ml-16 bg-blue-100"> <!-- bg-blue-100 -->
           <slot />
         </div>
-        <div class="sidebar lg:px-3 mx-10 lg:mr-10 lg:ml-5 lg:mr-16"> <!-- bg-purple-100 -->
+        <div class="sidebar mx-10 md:mx-16 lg:ml-8 lg:mr-16 bg-purple-100"> <!-- bg-purple-100 -->
           <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic font-sans">This website is currently in development.</p>
           <div class="my-5">
             <h2>Recent Posts</h2>
@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <footer class="w-full text-center pb-4 pt-4">© {{ new Date().getFullYear() }} Victor Fisher</footer>
+    <footer class="w-full text-center py-5">© {{ new Date().getFullYear() }} Victor Fisher</footer>
     <!-- <footer class="fixed bottom-0 w-full text-center my-5">© {{ new Date().getFullYear() }} Victor Fisher</footer> -->
   </div>
 </template>
@@ -94,7 +94,7 @@ p {
 
 @media (min-width: 1024px) {
   .sidebar {
-    width: 20rem;
+    width: 35rem;
   }
 }
 
