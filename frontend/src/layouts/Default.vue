@@ -9,10 +9,10 @@
         <Navbar />
       </header>
       <div class="lg:flex lg:flex-row lg:justify-between md:mt-5">
-        <div id="slot-container" class="mb-5 lg:mb-0 lg:flex-grow lg:px-3 mx-10 lg:ml-10 lg:mr-5"> <!-- bg-blue-100 -->
+        <div class="md:mx-16 mb-5 lg:mb-0 lg:flex-grow lg:px-3 mx-10 lg:ml-10 lg:mr-5 lg:ml-16"> <!-- bg-blue-100 -->
           <slot />
         </div>
-        <div class="sidebar lg:px-3 mx-10 lg:mr-10 lg:ml-5"> <!-- bg-purple-100 -->
+        <div class="sidebar lg:px-3 mx-10 lg:mr-10 lg:ml-5 lg:mr-16"> <!-- bg-purple-100 -->
           <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic font-sans">This website is currently in development.</p>
           <div class="my-5">
             <h2>Recent Posts</h2>
