@@ -74,13 +74,3 @@ export default {
   }
 }
 </script>
-
-<style>
-a:focus, button:focus, input:focus, select:focus {
-   outline: 0 !important
-}
-
-a:focus, button:focus, input:focus, select:focus {
-	box-shadow: 0 0 0 2px black
-}
-</style>

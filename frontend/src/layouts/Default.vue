@@ -9,10 +9,10 @@
         <Navbar />
       </header>
       <div class="lg:flex lg:flex-row lg:justify-between md:mt-5">
-        <div id="slot-container" class="md:mx-16 mb-5 lg:mb-0 lg:flex-grow mx-10 lg:mr-8 lg:ml-16 bg-blue-100"> <!-- bg-blue-100 -->
+        <div id="slot-container" class="md:mx-16 mb-5 lg:mb-0 lg:flex-grow mx-10 lg:mr-8 lg:ml-16"> <!-- bg-blue-100 -->
           <slot />
         </div>
-        <div class="sidebar mx-10 md:mx-16 lg:ml-8 lg:mr-16 bg-purple-100"> <!-- bg-purple-100 -->
+        <div id="sidebar" class="mx-10 md:mx-16 lg:ml-8 lg:mr-16"> <!-- bg-purple-100 -->
           <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic font-sans">This website is currently in development.</p>
           <div class="my-5">
             <h2>Recent Posts</h2>
@@ -93,13 +93,30 @@ p {
 }
 
 @media (min-width: 1024px) {
-  .sidebar {
-    width: 35rem;
+  #sidebar {
+    width: 20rem;
   }
 }
 
 #slot-container:empty {
   margin-bottom: 0;
+}
+
+/* a:focus, button:focus, input:focus, select:focus {
+   outline: 0 !important
+} */
+
+a:focus, button:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 2px black;
+  -webkit-box-shadow: 0 0 0 2px black;
+	-moz-box-shadow: 0 0 0 2px black;
+  border-radius: 0px;
+  outline: 2px;
+  @apply transition-all duration-100 ease-linear;
+}
+
+a, button, input, select {
+ padding: 2px;
 }
 
 /* body {
