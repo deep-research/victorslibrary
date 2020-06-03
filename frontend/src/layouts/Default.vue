@@ -3,7 +3,7 @@
     <div class="mb-auto">
       <header class="header">
         <div class="text-center my-5">
-          <g-link to="/" id="title" class="text-3xl sm:text-5xl transition-all duration-100 ease-linear sm:title hover:no-underline">{{ $static.metadata.siteName }}</g-link>
+          <g-link to="/" id="title" class="text-3xl sm:text-5xl sm:title hover:no-underline">{{ $static.metadata.siteName }}</g-link> <!-- transition-all duration-100 ease-linear -->
           <p id="subtitle" class="font-bold text-sm mb-5">{{ $static.metadata.siteDescription }}</p>
         </div>
         <Navbar />
@@ -110,15 +110,17 @@ a:focus, button:focus, input:focus, select:focus {
   box-shadow: 0 0 0 2px black;
   -webkit-box-shadow: 0 0 0 2px black;
 	-moz-box-shadow: 0 0 0 2px black;
+  /* -ms-transition:  0 0 0 2px black;
+  -o-transition:  0 0 0 2px black; */
   border-radius: 0px;
-  outline: 2px;
-  transition-property: all;	
-  transition-duration: 100ms;
-  transition-timing-function: linear;	
+  outline: 2px;	
 }
 
 a, button, input, select {
- padding: 2px;
+  padding: 2px;
+  transition-property: all;	
+  transition-duration: 100ms;
+  transition-timing-function: linear;
 }
 
 audio:focus {
