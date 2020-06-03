@@ -125,7 +125,11 @@ export default {
   },
   mounted() {
     if (sessionStorage.isReversed) {
-      this.isReversed = sessionStorage.isReversed
+      if (sessionStorage.isReversed == 'true') {
+        this.isReversed = true
+      } else if (sessionStorage.isReversed == 'false') {
+        this.isReversed = false
+      }
     }
     if (sessionStorage.search) {
       this.search = sessionStorage.search

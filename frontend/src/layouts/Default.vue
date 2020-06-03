@@ -112,11 +112,24 @@ a:focus, button:focus, input:focus, select:focus {
 	-moz-box-shadow: 0 0 0 2px black;
   border-radius: 0px;
   outline: 2px;
-  @apply transition-all duration-100 ease-linear;
+  transition-property: all;	
+  transition-duration: 100ms;
+  transition-timing-function: linear;	
 }
 
 a, button, input, select {
  padding: 2px;
+}
+
+audio:focus {
+  box-shadow: 0 0 0 2px black;
+  -webkit-box-shadow: 0 0 0 2px black;
+	-moz-box-shadow: 0 0 0 2px black;
+  border-radius: 0px;
+  outline: 2px;
+  transition-property: all;	
+  transition-duration: 100ms;
+  transition-timing-function: linear;	
 }
 
 /* body {
