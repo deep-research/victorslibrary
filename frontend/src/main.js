@@ -4,6 +4,7 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import Vue from 'vue'
 import VueMarkdown from 'vue-markdown'
+import 'a17t'
 require('typeface-merienda-one')
 require('typeface-gilda-display')
 require('typeface-merriweather')

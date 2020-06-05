@@ -1,32 +1,29 @@
 <template>
   <Layout :bind="createFilter">
     <h1>Music by Reenchantment</h1>
+
     <!-- Opportunity for modularization of select elements -->
     <div>
-    <select v-model="filters.recordingtype">
-      <option>All Songs</option>
-      <option>Recordings</option>
-      <option>Demos</option>
-      <option>Drafts</option>
-      <option>Videos</option>
-    </select>
+      <select v-model="filters.recordingtype">
+        <option>All Songs</option>
+        <option>Recordings</option>
+        <option>Demos</option>
+        <option>Drafts</option>
+        <option>Videos</option>
+      </select>
+      <button type="button" v-on:click="reverse" class="button ~neutral !normal mb-1 ml-3">Reverse</button>
+      <button type="button" v-on:click="resetData" class="button ~neutral !normal mb-1 ml-3">Refresh</button>
     </div>
+
     <!-- <select v-model="filters.genre" style="margin-left: 20px">
       <option>All Styles</option>
       <option>Rock</option>
       <option>Metal</option>
     </select> -->
+
     <div>
-      <button type="button" v-on:click="reverse">Reverse</button>
-    </div>
-    <div>
-      <input v-model="search" placeholder="Search">
-    </div>
-    <div>
-      <button type="button" v-on:click="clearSearch">Clear Search</button>
-    </div>
-    <div>
-      <button type="button" v-on:click="resetData">Refresh</button>
+      <input id="search" v-model="search" class="field ~neutral !normal my-4" placeholder="Search" type="text">
+      <button type="button" v-on:click="clearSearch" class="button ~neutral !normal mb-1 ml-3">Clear</button>
     </div>
 
     <h3 v-if="filterData.length > 0">Results: {{ filterData.length }}</h3>
@@ -187,6 +184,10 @@ export default {
 </script>
 
 <style>
+#search {
+  width: 19rem;
+}
+
 /* input, select, textarea, button {
   font-size: 16px;
 } */

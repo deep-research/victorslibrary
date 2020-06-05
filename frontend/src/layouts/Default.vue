@@ -9,11 +9,11 @@
         <Navbar />
       </header>
       <div class="lg:flex lg:flex-row lg:justify-between md:mt-5">
-        <div id="slot-container" class="md:mx-16 mb-5 lg:mb-0 lg:flex-grow mx-10 lg:mr-8 lg:ml-16"> <!-- bg-blue-100 -->
+        <div id="slot-container" class="md:w-8/12 md:mx-auto mb-5 lg:mb-0 lg:flex-grow mx-10 lg:mr-5 lg:ml-20"> <!-- bg-blue-100 -->
           <slot />
         </div>
-        <div id="sidebar" class="mx-10 md:mx-16 lg:ml-8 lg:mr-16"> <!-- bg-purple-100 -->
-          <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic font-sans">This website is currently in development.</p>
+        <div id="sidebar" class="mx-10 md:w-8/12 md:mx-auto lg:ml-5 lg:mr-20"> <!-- bg-purple-100 -->
+          <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic font-sans text-base">This website is currently in development.</p>
           <div class="my-5">
             <h2>Recent Posts</h2>
             <ul>
@@ -36,7 +36,7 @@
           </div>
           <div>
             <h2>Links</h2>
-            <ul>
+            <ul class="mb-0">
               <li>Bandcamp</li>
               <li>Twitter</li>
               <li>Facebook</li>
@@ -75,14 +75,14 @@ query {
 @import './default.css';
 
 #title {
-  font-family: 'Merienda One', Merriweather, lato,'helvetica neue', helvetica, arial;
+  font-family: 'Merienda One', Merriweather, lato,'helvetica neue', helvetica, arial, serif;
 }
 
 #subtitle {
-  font-family: 'Gilda Display', lato,'helvetica neue', helvetica, arial;
+  font-family: 'Gilda Display', lato,'helvetica neue', helvetica, arial, sans-serif;
 }
 
-p {
+p, ul {
   font-family: 'Amiko','lato', lato, 'helvetica neue', helvetica, arial, sans-serif;
 }
 
@@ -94,7 +94,8 @@ p {
 
 @media (min-width: 1024px) {
   #sidebar {
-    width: 20rem;
+    min-width: 20rem;
+    max-width: 20rem;
   }
 }
 
@@ -106,32 +107,26 @@ p {
    outline: 0 !important
 } */
 
-a:focus, button:focus, input:focus, select:focus {
-  box-shadow: 0 0 0 2px black;
-  -webkit-box-shadow: 0 0 0 2px black;
-	-moz-box-shadow: 0 0 0 2px black;
-  /* -ms-transition:  0 0 0 2px black;
-  -o-transition:  0 0 0 2px black; */
-  border-radius: 0px;
-  outline: 2px;	
-}
-
-a, button, input, select {
-  padding: 2px;
-  transition-property: all;	
-  transition-duration: 100ms;
-  transition-timing-function: linear;
-}
-
-audio:focus {
-  box-shadow: 0 0 0 2px black;
+a:focus, button:focus, input:focus, select:focus, audio:focus, video:focus {
+  /* box-shadow: 0 0 0 2px black;
   -webkit-box-shadow: 0 0 0 2px black;
 	-moz-box-shadow: 0 0 0 2px black;
   border-radius: 0px;
-  outline: 2px;
-  transition-property: all;	
-  transition-duration: 100ms;
-  transition-timing-function: linear;	
+  outline: 2px; */
+  @apply outline-none;
+  @apply shadow-outline;
+}
+
+a, button, input, select, audio, video {
+  transition: all 100ms linear;
+  -webkit-transition: all 100ms linear;
+  -moz-transition: all 100ms linear;
+  -ms-transition: all 100ms linear;
+  -o-transition: all 100ms linear;
+}
+
+a {
+  padding: 1px;
 }
 
 /* body {

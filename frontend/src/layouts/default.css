@@ -1,29 +1,41 @@
 h1 {
-  @apply text-2xl;
+  /* @apply text-2xl; */
+  /* font-size: 1.5rem; */
+  font-size: 1.625rem;
   @apply font-semibold;
   @apply mb-3;
 }
 
 h2 {
-  @apply text-xl;
+  /* @apply text-xl; */
+  /* font-size: 1.25rem; */
+  font-size: 1.35rem;
   @apply font-semibold;
   @apply mb-3;
 }
 
 h3 {
-  @apply text-lg;
+  /* @apply text-lg; */
+  /* font-size: 1.125rem; */
+  font-size: 1.25rem;
   @apply font-semibold;
-  @apply mb-6;
+  @apply mb-8;
   @apply tracking-wide;
 }
 
-p {
-  @apply text-base;
-  @apply mb-4;   
+p, ul {
+  /* @apply text-base; */
+  /* font-size: 1rem; */
+  font-size: 1.025rem;
+  @apply mb-6;   
 }
 
-audio {
-  @apply mb-6
+audio, video {
+  @apply mb-8
+}
+
+video {
+  max-width: 500px;
 }
 
 a:hover {
