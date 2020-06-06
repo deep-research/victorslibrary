@@ -119,10 +119,10 @@ a:focus, button:focus, input:focus, select:focus, audio:focus, video:focus {
 
 a, button, input, select, audio, video {
   transition: all 100ms linear;
-  -webkit-transition: all 100ms linear;
-  -moz-transition: all 100ms linear;
-  -ms-transition: all 100ms linear;
-  -o-transition: all 100ms linear;
+  -webkit-transition: all 100ms linear !important;
+  -moz-transition: all 100ms linear !important;
+  -ms-transition: all 100ms linear !important;
+  -o-transition: all 100ms linear !important;
 }
 
 a {

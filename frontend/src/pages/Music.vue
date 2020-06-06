@@ -5,10 +5,10 @@
 
     <!-- Opportunity for modularization of select elements -->
     <div>
-      <div v-on-clickaway="dropdown_closed" class="block sm:inline">
-        <button type="button" v-on:click="dropdown_open = !dropdown_open" class="button ~neutral !normal mb-2 sm:mb-0 sm:mr-4">
+      <div class="menu">
+        <button v-on-clickaway="dropdown_closed" type="button" v-on:click="dropdown_open = !dropdown_open" class="button ~neutral !normal mb-2 sm:mb-0 sm:mr-4">
           <span>{{ filters.recordingtype }}</span>
-          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': dropdown_open, 'rotate-0': !dropdown_open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform -mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': dropdown_open, 'rotate-0': !dropdown_open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
         </button>
         <transition
             enter-active-class="transition duration-100 ease-out"
@@ -36,8 +36,8 @@
         <option>Drafts</option>
         <option>Videos</option>
       </select> -->
-      <button type="button" v-on:click="reverse" class="button ~neutral !normal block mt-2 mb-4 sm:mb-0 sm:inline sm:mr-4">Reverse</button>
-      <button type="button" v-on:click="resetData" class="button ~neutral !normal block sm:inline">Refresh</button>
+      <button type="button" v-on:click="reverse" class="button ~neutral !normal mt-2 mb-2 sm:mb-0 sm:mr-4 menu">Reverse</button>
+      <button type="button" v-on:click="resetData" class="button ~neutral !normal menu mt-4 sm:mt-0">Refresh</button>
     </div>
 
     <!-- <select v-model="filters.genre" style="margin-left: 20px">
@@ -233,6 +233,16 @@ button {
 
 .dropdown:hover .dropdown-menu {
   display: block;
+}
+
+.menu {
+  display: block
+}
+
+@media (min-width: 640px) { 
+  .menu {
+    display: inline;
+  }
 }
 
 /* input, select, textarea, button {
