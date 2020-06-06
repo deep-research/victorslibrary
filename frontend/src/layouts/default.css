@@ -19,7 +19,7 @@ h3 {
   /* font-size: 1.125rem; */
   font-size: 1.25rem;
   @apply font-semibold;
-  @apply mb-8;
+  @apply mb-6;
   @apply tracking-wide;
 }
 
@@ -38,6 +38,6 @@ video {
   max-width: 500px;
 }
 
-a:hover {
+a {
   @apply underline
 }

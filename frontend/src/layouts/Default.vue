@@ -3,16 +3,16 @@
     <div class="mb-auto">
       <header class="header">
         <div class="text-center my-5">
-          <g-link to="/" id="title" class="text-3xl sm:text-5xl sm:title hover:no-underline">{{ $static.metadata.siteName }}</g-link> <!-- transition-all duration-100 ease-linear -->
+          <g-link to="/" id="title" class="no-underline text-3xl sm:text-5xl sm:title hover:no-underline">{{ $static.metadata.siteName }}</g-link> <!-- transition-all duration-100 ease-linear -->
           <p id="subtitle" class="font-bold text-sm mb-5">{{ $static.metadata.siteDescription }}</p>
         </div>
         <Navbar />
       </header>
       <div class="lg:flex lg:flex-row lg:justify-between md:mt-5">
-        <div id="slot-container" class="md:w-8/12 md:mx-auto mb-5 lg:mb-0 lg:flex-grow mx-10 lg:mr-5 lg:ml-20"> <!-- bg-blue-100 -->
+        <div id="slot-container" class="mx-10 md:w-9/12 md:mx-auto mb-5 lg:mb-0 lg:mr-20 lg:ml-20"> <!-- bg-blue-100 -->
           <slot />
         </div>
-        <div id="sidebar" class="mx-10 md:w-8/12 md:mx-auto lg:ml-5 lg:mr-20"> <!-- bg-purple-100 -->
+        <div id="sidebar" class="mx-10 md:w-9/12 md:mx-auto lg:mr-20"> <!-- bg-purple-100 -->
           <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic font-sans text-base">This website is currently in development.</p>
           <div class="my-5">
             <h2>Recent Posts</h2>
@@ -27,11 +27,11 @@
           <div class="mb-5">
             <h2>Categories</h2>
             <ul>
-              <li><span >December 2019</span> (1)</li>
-              <li><span >November 2019</span> (1)</li>
-              <li><span >October 2019</span> (1)</li>
-              <li><span >September 2019</span> (12)</li>
-              <li><span >December 2018</span> (1)</li>
+              <li>December 2019 (1)</li>
+              <li>November 2019 (1)</li>
+              <li>October 2019 (1)</li>
+              <li>September 2019 (12)</li>
+              <li>December 2018 (1)</li>
             </ul>
           </div>
           <div>
@@ -94,8 +94,8 @@ p, ul {
 
 @media (min-width: 1024px) {
   #sidebar {
-    min-width: 20rem;
-    max-width: 20rem;
+    min-width: 18rem;
+    max-width: 18rem;
   }
 }
 
