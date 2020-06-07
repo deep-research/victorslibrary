@@ -21,11 +21,11 @@
         >
           <div v-if="dropdown_open" class="w-full md:w-auto relative md:absolute md:mt-2 mb-5 origin-top-right rounded-md shadow-lg w-48 z-40">
             <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
-              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='All Songs'; dropdown_open=false">All Songs</button>
-              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Recordings'; dropdown_open=false">Recordings</button>
-              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Demos'; dropdown_open=false">Demos</button>
-              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Drafts'; dropdown_open=false">Drafts</button>
-              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Videos'; dropdown_open=false">Videos</button>
+              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='All Songs'; dropdown_open=false; $router.push($route.path)">All Songs</button>
+              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Recordings'; dropdown_open=false; $router.push($route.path)">Recordings</button>
+              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Demos'; dropdown_open=false; $router.push($route.path)">Demos</button>
+              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Drafts'; dropdown_open=false; $router.push($route.path)">Drafts</button>
+              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Videos'; dropdown_open=false; $router.push($route.path)">Videos</button>
             </div>
           </div>
         </transition>
@@ -133,6 +133,7 @@ export default {
     resetData () {
       Object.assign(this.$data, this.$options.data.call(this))
       this.fetchData()
+      this.$router.push(this.$route.path)
     },
     dropdown_closed () {
       this.dropdown_open = false
@@ -169,6 +170,12 @@ export default {
     if (sessionStorage.filters) {
       this.filters = JSON.parse(sessionStorage.filters)
     }
+
+    if (this.$route.query.songfilter == "recordings") {
+      this.filters.recordingtype='Recordings'
+    } else if (this.$route.query.songfilter == "demos") {
+      this.filters.recordingtype='Demos'
+    }
   },
   watch: {
     isReversed(value) {
@@ -182,6 +189,15 @@ export default {
         sessionStorage.filters = JSON.stringify(value)
       },
       deep: true
+    },
+    '$route.query.songfilter'() {
+      if (this.$route.query.songfilter == "recordings") {
+        this.filters.recordingtype='Recordings'
+      } else if (this.$route.query.songfilter == "demos") {
+        this.filters.recordingtype='Demos'
+      }
+
+      console.log(this.filters)
     }
   },
   computed: {

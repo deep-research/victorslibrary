@@ -39,6 +39,7 @@
             <ul class="mb-5">
               <li><g-link class="no-underline hover:underline" to="/music/theyll-come-for-you">They'll Come For You</g-link></li>
               <li><g-link class="no-underline hover:underline" to="/music/the-ritual">The Ritual</g-link></li>
+              <li><g-link class="no-underline hover:underline" to="/music?songfilter=recordings">Recordings</g-link></li>
             </ul>
           </div>
           <div>
