@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :key="componentKey">
     <div v-if="$page.strapiSongs.custom">
       <component :is="customPage" v-bind:data="$page.strapiSongs" />
     </div>
@@ -17,16 +17,16 @@
 
       <!-- Opportunity for modularization of media elements -->
       <div class="audio"> <!-- style="max-width: 550px;" -->
-        <h2 v-if="$page.strapiSongs.recordings.length > 0">{{ recordingsLabel }}</h2>
+        <h2 v-if="recordingData.length > 0">{{ recordingsLabel }}</h2>
         <div v-for="(recording, recordingCounter ) in recordingData" :key="recordingCounter">
-          <h3 v-if="$page.strapiSongs.recordings.length > 1">{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
+          <h3 v-if="recordingData.length > 1">{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
           <!-- <ClientOnly> -->
             <!-- preload="auto" -->
             <audio :ref="`player-${recording.url}`" @play="stopOthers(recording.url)" controls>
               <source :src="recording.url" type="audio/mp3" />
               Your browser does not support the audio element.
             </audio>
-        <!-- </ClientOnly> -->
+          <!-- </ClientOnly> -->
         </div>
       </div>
       
@@ -91,7 +91,8 @@ export default {
       recordingsLabel: "",
       videoPlural: "Video:",
       currentTrack: null,
-      isDemo: true
+      isDemo: true,
+      componentKey: 0
     }
   },
   created () {
@@ -99,6 +100,7 @@ export default {
   },
   beforeUpdate () {
     this.fetchData()
+    this.forceRerender()
   },
   methods: {
     // Vue Router Data Fetching
@@ -137,7 +139,6 @@ export default {
         }
       }
     },
-
     stopOthers(newTrack) {
       if (this.currentTrack) {
         let refName = `player-${this.currentTrack}`;
@@ -145,6 +146,9 @@ export default {
         if (newTrack == this.currentTrack) {} else {player.pause()}
       }
       this.currentTrack = newTrack;
+    },
+    forceRerender() {
+      this.componentKey += 1;  
     }
   }
 }
