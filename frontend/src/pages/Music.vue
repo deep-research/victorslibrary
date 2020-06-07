@@ -6,8 +6,8 @@
 
     <!-- Opportunity for modularization of select elements -->
     <div>
-      <div class="block sm:inline">
-        <button v-on-clickaway="dropdown_closed" type="button" v-on:click="dropdown_open = !dropdown_open" class="px-2 py-1 rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block sm:inline mb-2 sm:mb-0 sm:mr-4">
+      <div class="block md:inline">
+        <button v-on-clickaway="dropdown_closed" type="button" v-on:click="dropdown_open = !dropdown_open" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto px-2 py-1 rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mb-2 md:mb-0 md:mr-4">
           <span>{{ filters.recordingtype }}</span>
           <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': dropdown_open, 'rotate-0': !dropdown_open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform -mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
         </button>
@@ -19,7 +19,7 @@
             leave-class="transform opacity-100 scale-100"
             leave-to-class="transform opacity-0 scale-95"
         >
-          <div v-if="dropdown_open" class="absolute sm:mt-2 mb-5 origin-top-right rounded-md shadow-lg w-48 z-40">
+          <div v-if="dropdown_open" class="w-full md:w-auto relative md:absolute md:mt-2 mb-5 origin-top-right rounded-md shadow-lg w-48 z-40">
             <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
               <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='All Songs'; dropdown_open=false">All Songs</button>
               <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Recordings'; dropdown_open=false">Recordings</button>
@@ -37,8 +37,8 @@
         <option>Drafts</option>
         <option>Videos</option>
       </select> -->
-      <button type="button" v-on:click="reverse" class="px-2 py-1 rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block sm:inline mt-4 sm:mt-0 mb-2 sm:mb-0 sm:mr-4">Reverse</button>
-      <button type="button" v-on:click="resetData" class="px-2 py-1 rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block sm:inline mt-4 sm:mt-0">Refresh</button>
+      <button type="button" v-on:click="reverse" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto px-2 py-1 rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mt-4 md:mt-0 mb-2 md:mb-0 md:mr-4">Reverse</button>
+      <button type="button" v-on:click="resetData" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto px-2 py-1 rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mt-4 md:mt-0">Refresh</button>
     </div>
 
     <!-- <select v-model="filters.genre" style="margin-left: 20px">
@@ -221,11 +221,18 @@ export default {
 <style>
 #search {
   width: 17rem;
+  width: 100%
 }
 
 #search:focus {
   outline: 0;
   box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+@media (min-width: 768px) { 
+  #search {
+    width: 17rem;
+  }
 }
 
 /* input, select, textarea, button {

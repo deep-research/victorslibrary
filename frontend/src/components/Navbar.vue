@@ -13,7 +13,7 @@
             </svg>
           </button>
         </div>
-        <nav :class="{'flex': mobile_open, 'hidden': !mobile_open}" class="flex-col flex-grow pb-5 md:pb-0 md:flex md:justify-center md:flex-row md:space-x-4 > *">
+        <nav :class="{'flex': mobile_open, 'hidden': !mobile_open}" class="mx-4 flex-col flex-grow pb-5 md:pb-0 md:flex md:justify-center md:flex-row md:space-x-4 > *">
           <!-- ORIGINAL LINKS -->
           <!-- <g-link class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/">Home</g-link>
           <g-link class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/music/">Music</g-link> -->

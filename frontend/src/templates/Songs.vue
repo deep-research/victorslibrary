@@ -94,9 +94,9 @@ export default {
       isDemo: true
     }
   },
-  // created () {
-  //   this.fetchData()
-  // },
+  created () {
+    this.fetchData()
+  },
   beforeUpdate () {
     this.fetchData()
   },
