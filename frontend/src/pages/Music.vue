@@ -1,7 +1,8 @@
 <template>
   <Layout :bind="createFilter">
-    <h1>Reenchantment</h1>
-    <p class="font-semibold">Music by Victor Fisher</p>
+    <h1 class="mb-1 tracking-wider font-semibold text-3xl">Reenchantment</h1>
+    <p class="font-bold mb-2 text-purple-600 text-lg tracking-wide">Music as a Spiritual Practice</p>
+    <p class="font-semibold">By Victor Fisher</p>
 
     <!-- Opportunity for modularization of select elements -->
     <div>

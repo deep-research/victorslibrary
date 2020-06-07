@@ -5,7 +5,7 @@
     </div>
     
     <div v-else>
-      <h1 v-html="$page.strapiSongs.title" />
+      <h1>{{ $page.strapiSongs.title }}</h1>
       <h3>
         By <g-link to="/music/">Reenchantment</g-link> <!-- style="text-decoration: none; color: black" -->
       </h3>
@@ -13,7 +13,7 @@
       <p v-if="$page.strapiSongs.explicit">⚠️ Warning: Contains explicit content.</p>
       
       <h2>Description:</h2>
-      <VueMarkdown>{{ $page.strapiSongs.description }}</VueMarkdown>
+      <VueMarkdown v-bind:source="$page.strapiSongs.description"></VueMarkdown>
 
       <!-- Opportunity for modularization of media elements -->
       <div class="audio"> <!-- style="max-width: 550px;" -->
@@ -45,13 +45,13 @@
       </div>
       
       <h2 v-if="$page.strapiSongs.lyrics">Lyrics:</h2>
-      <VueMarkdown>{{ $page.strapiSongs.lyrics }}</VueMarkdown>
+      <VueMarkdown v-bind:source="$page.strapiSongs.lyrics"></VueMarkdown>
       
       <h2>Credits:</h2>
-      <VueMarkdown>{{ $page.strapiSongs.credits }}</VueMarkdown>
+      <VueMarkdown v-bind:source="$page.strapiSongs.credits"></VueMarkdown>
     </div>
   </Layout>
-</Template> 
+</template>
 
 <page-query>
 query ($id: ID!) {
@@ -94,7 +94,10 @@ export default {
       isDemo: true
     }
   },
-  created () {
+  // created () {
+  //   this.fetchData()
+  // },
+  beforeUpdate () {
     this.fetchData()
   },
   methods: {

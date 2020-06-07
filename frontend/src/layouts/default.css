@@ -27,7 +27,11 @@ p, ul {
   /* @apply text-base; */
   /* font-size: 1rem; */
   font-size: 1.025rem;
-  @apply mb-6;   
+  @apply mb-6;
+}
+
+li {
+  @apply my-1
 }
 
 audio, video {

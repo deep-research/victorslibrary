@@ -14,7 +14,7 @@
         </div>
         <div id="sidebar" class="mx-10 md:w-9/12 md:mx-auto lg:mr-20"> <!-- bg-purple-100 -->
           <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic font-sans text-base">This website is currently in development.</p>
-          <div class="my-5">
+          <!-- <div class="my-5">
             <h2>Recent Posts</h2>
             <ul>
               <li>The Philosophical and Spiritual Value of Music</li>
@@ -33,15 +33,28 @@
               <li>September 2019 (12)</li>
               <li>December 2018 (1)</li>
             </ul>
+          </div> -->
+          <div>
+            <h2>Best Recordings</h2>
+            <ul class="mb-5">
+              <li><g-link class="no-underline hover:underline" to="/music/theyll-come-for-you">They'll Come For You</g-link></li>
+              <li><g-link class="no-underline hover:underline" to="/music/the-ritual">The Ritual</g-link></li>
+            </ul>
           </div>
           <div>
-            <h2>Links</h2>
+            <h2>Social Media</h2>
+            <ul class="mb-5">
+              <li><a class="no-underline hover:underline" href="https://reenchantment.bandcamp.com/" target="_blank">Bandcamp</a></li>
+              <li><a class="no-underline hover:underline" href="https://www.youtube.com/user/reverendofdespair/" target="_blank">YouTube</a></li>
+              <li><a class="no-underline hover:underline" href="https://twitter.com/evilrockmusic/" target="_blank">Twitter</a></li>
+              <li><a class="no-underline hover:underline" href="https://www.facebook.com/atmosphericrock/" target="_blank">Facebook</a></li>
+              <li><a class="no-underline hover:underline" href="https://www.instagram.com/atmosphericrock/" target="_blank">Instagram</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Related Projects</h2>
             <ul class="mb-0">
-              <li>Bandcamp</li>
-              <li>Twitter</li>
-              <li>Facebook</li>
-              <li>Instagram</li>
-              <li>YouTube</li>
+              <li><a class="no-underline hover:underline" href="https://patershrouder.bandcamp.com/" target="_blank">Pater Shrouder</a></li>
             </ul>
           </div>
         </div>
