@@ -131,8 +131,9 @@ export default {
       this.search = ""
     },
     resetData () {
-      Object.assign(this.$data, this.$options.data.call(this))
+      Object.assign(this.$data, this.$options.data.apply(this))
       this.fetchData()
+      this.mounted = true
     },
     dropdown_closed () {
       this.dropdown_open = false
@@ -149,25 +150,46 @@ export default {
       },
       search: "",
       dropdown_open: false,
-      mobile_open: false
+      mobile_open: false,
+      mounted: false
     }
   },
   created () {
     this.fetchData()
   },
   mounted() {
-    if (sessionStorage.isReversed) {
-      if (sessionStorage.isReversed == 'true') {
-        this.isReversed = true
-      } else if (sessionStorage.isReversed == 'false') {
-        this.isReversed = false
+    this.mounted = true
+
+    if (this.$route.hash == "") {
+      if (sessionStorage.isReversed) {
+        if (sessionStorage.isReversed == 'true') {
+          this.isReversed = true
+        } else if (sessionStorage.isReversed == 'false') {
+          this.isReversed = false
+        }
       }
-    }
-    if (sessionStorage.search) {
-      this.search = sessionStorage.search
-    }
-    if (sessionStorage.filters) {
-      this.filters = JSON.parse(sessionStorage.filters)
+      if (sessionStorage.search) {
+        this.search = sessionStorage.search
+      }
+      if (sessionStorage.filters) {
+        this.filters = JSON.parse(sessionStorage.filters)
+      }
+    } else {
+      const searchParams = {
+        search: this.search,
+        reversed: this.isReversed,
+        type: this.filters.recordingtype
+      }
+      this.getFiltersFromUrl(searchParams, true)
+      if (this.search !== searchParams.search) {
+        this.search = searchParams.search
+      }
+      if (this.isReversed !== searchParams.reversed) {
+        this.isReversed = searchParams.reversed
+      }
+      if (this.filters.recordingtype !== searchParams.type) {
+        this.filters.recordingtype = searchParams.type
+      }
     }
   },
   watch: {
@@ -182,37 +204,66 @@ export default {
         sessionStorage.filters = JSON.stringify(value)
       },
       deep: true
+    },
+    '$route.hash' () {
+      const searchParams = {
+        search: this.search,
+        reversed: this.isReversed,
+        type: this.filters.recordingtype
+      }
+      this.getFiltersFromUrl(searchParams, true)
+      if (this.search !== searchParams.search) {
+        this.search = searchParams.search
+      }
+      if (this.isReversed !== searchParams.reversed) {
+        this.isReversed = searchParams.reversed
+      }
+      if (this.filters.recordingtype !== searchParams.type) {
+        this.filters.recordingtype = searchParams.type
+      }
     }
   },
   computed: {
     createFilter () {
-      let filterData = this.songData
-      for (let [key, value] of Object.entries(this.filters)) {
-        if (value.startsWith("All")) {
-          break
-        } else if (value == "Videos") {
-            filterData = filterData.filter(song => song.hasVideo == true)
-        } else {
-          filterData = filterData.filter(song => song[key] == value)
+      if (this.mounted) {
+        let filterData = this.songData
+        for (let [key, value] of Object.entries(this.filters)) {
+          if (value.startsWith("All")) {
+            break
+          } else if (value == "Videos") {
+              filterData = filterData.filter(song => song.hasVideo == true)
+          } else {
+            filterData = filterData.filter(song => song[key] == value)
+          }
         }
+
+        filterData = filterData.filter(song => song.title.toLowerCase().includes(this.search.toLowerCase()))
+        
+        let filterCount = 1
+        filterData.map((song) => {
+          song.count = filterCount
+          filterCount = filterCount + 1
+        })
+
+        if (this.isReversed) {
+          filterData.reverse()
+        }
+
+        const searchParams = {
+          search: this.search,
+          reversed: this.isReversed,
+          type: this.filters.recordingtype
+        }
+        this.updateUrlHash(searchParams)
+        // history.pushState(
+        //   {},
+        //   null,
+        //   this.$route.path + '?' + "reverse=" + this.isReversed
+        // )
+
+        this.filterData = filterData
+        return this.filterData
       }
-
-      filterData = filterData.filter(song => song.title.toLowerCase().includes(this.search.toLowerCase()))
-      
-      let filterCount = 1
-      filterData.map((song) => {
-        song.count = filterCount
-        filterCount = filterCount + 1
-      })
-
-      if (this.isReversed) {
-        filterData.reverse()
-      }
-
-      this.filterData = filterData
-      return this.filterData
-
-      // Add filter song count as an attribute
     }
   }
 }

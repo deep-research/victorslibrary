@@ -5,6 +5,7 @@ import DefaultLayout from '~/layouts/Default.vue'
 import Vue from 'vue'
 import VueMarkdown from 'vue-markdown'
 import 'a17t'
+import vueUrlParameters from 'vue-url-parameters'
 require('typeface-merienda-one')
 require('typeface-gilda-display')
 require('typeface-merriweather')
@@ -13,13 +14,8 @@ require('typeface-lato')
 // Stop All Vue Warnings:
 // Vue.config.silent = true
 
-Vue.component('VueMarkdown', VueMarkdown);
-
-new Vue({
-  components: {
-    VueMarkdown
-  }
-})
+Vue.component('VueMarkdown', VueMarkdown)
+Vue.mixin(vueUrlParameters)
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component

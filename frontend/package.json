@@ -20,6 +20,7 @@
     "typeface-merienda-one": "^0.0.72",
     "typeface-merriweather": "^0.0.72",
     "vue-clickaway": "^2.2.2",
-    "vue-markdown": "^2.2.4"
+    "vue-markdown": "^2.2.4",
+    "vue-url-parameters": "^1.0.7"
   }
 }
