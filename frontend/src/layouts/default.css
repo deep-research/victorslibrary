@@ -1,3 +1,10 @@
+::selection {
+  @apply bg-indigo-200
+}
+::-moz-selection {
+  @apply bg-indigo-200
+}
+
 h1 {
   /* @apply text-2xl; */
   /* font-size: 1.5rem; */

@@ -137,6 +137,26 @@ export default {
     },
     dropdown_closed () {
       this.dropdown_open = false
+    },
+    getUrlQuery () {
+      const searchParams = {
+        search: this.search,
+        reversed: this.isReversed,
+        type: this.filters.recordingtype
+      }
+      this.getFiltersFromUrl(searchParams)
+      if (this.search !== searchParams.search) {
+        this.search = searchParams.search
+      }
+      if (searchParams.reversed == "false" && this.isReversed) {
+        this.isReversed = false
+      } else if (searchParams.reversed == "true" && !this.isReversed) {
+        this.isReversed = true
+      }
+      const types = ["All Songs", "Recordings", "Demos", "Drafts", "Videos"];
+      if (types.includes(searchParams.type) && this.filters.recordingtype !== searchParams.type) {
+        this.filters.recordingtype = searchParams.type
+      }
     }
   },
   data () {
@@ -175,21 +195,7 @@ export default {
         this.filters = JSON.parse(sessionStorage.filters)
       }
     } else {
-      const searchParams = {
-        search: this.search,
-        reversed: this.isReversed,
-        type: this.filters.recordingtype
-      }
-      this.getFiltersFromUrl(searchParams, true)
-      if (this.search !== searchParams.search) {
-        this.search = searchParams.search
-      }
-      if (this.isReversed !== searchParams.reversed) {
-        this.isReversed = searchParams.reversed
-      }
-      if (this.filters.recordingtype !== searchParams.type) {
-        this.filters.recordingtype = searchParams.type
-      }
+      this.getUrlQuery()
     }
   },
   watch: {
@@ -206,21 +212,7 @@ export default {
       deep: true
     },
     '$route.hash' () {
-      const searchParams = {
-        search: this.search,
-        reversed: this.isReversed,
-        type: this.filters.recordingtype
-      }
-      this.getFiltersFromUrl(searchParams, true)
-      if (this.search !== searchParams.search) {
-        this.search = searchParams.search
-      }
-      if (this.isReversed !== searchParams.reversed) {
-        this.isReversed = searchParams.reversed
-      }
-      if (this.filters.recordingtype !== searchParams.type) {
-        this.filters.recordingtype = searchParams.type
-      }
+      this.getUrlQuery()
     }
   },
   computed: {
