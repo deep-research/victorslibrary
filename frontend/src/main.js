@@ -4,7 +4,7 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import Vue from 'vue'
 import VueMarkdown from 'vue-markdown'
-import 'a17t'
+// import 'a17t'
 import vueUrlParameters from 'vue-url-parameters'
 require('typeface-merienda-one')
 require('typeface-gilda-display')

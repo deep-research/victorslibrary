@@ -22,10 +22,11 @@
           <div v-if="dropdown_open" class="w-full md:w-auto relative md:absolute md:mt-2 mb-5 origin-top-right rounded-md shadow-lg w-48 z-40">
             <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
               <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='All Songs'; dropdown_open=false">All Songs</button>
-              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Recordings'; dropdown_open=false">Recordings</button>
-              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Demos'; dropdown_open=false">Demos</button>
-              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Drafts'; dropdown_open=false">Drafts</button>
-              <button type="button" class="w-full text-left block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Videos'; dropdown_open=false">Videos</button>
+              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Recordings'; dropdown_open=false">Recordings</button>
+              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Demos'; dropdown_open=false">Demos</button>
+              <!-- <hr class="my-2" /> -->
+              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Drafts'; dropdown_open=false">Drafts</button>
+              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Videos'; dropdown_open=false">Videos</button>
             </div>
           </div>
         </transition>
@@ -48,7 +49,7 @@
     </select> -->
 
     <div class="mb-2">
-      <input id="search" v-model="search" class="field ~neutral !normal my-4" placeholder="Search" type="search"> <!-- type="text" -->
+      <input id="search" v-model="search" class="border-2 border-gray-400 hover:border-gray-500 px-2 py-2 rounded mt-4" placeholder="Search" type="search"> <!-- type="text" -->
       <!-- <button type="button" v-on:click="clearSearch" class="button ~neutral !normal mb-1 ml-3">Clear</button> -->
     </div>
 
@@ -269,7 +270,7 @@ export default {
 
 #search:focus {
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
 }
 
 @media (min-width: 768px) { 
