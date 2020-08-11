@@ -2,9 +2,7 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from '~/layouts/Default.vue'
-import Vue from 'vue'
 import VueMarkdown from 'vue-markdown'
-// import 'a17t'
 import vueUrlParameters from 'vue-url-parameters'
 require('typeface-merienda-one')
 require('typeface-gilda-display')
@@ -14,10 +12,10 @@ require('typeface-lato')
 // Stop All Vue Warnings:
 // Vue.config.silent = true
 
-Vue.component('VueMarkdown', VueMarkdown)
-Vue.mixin(vueUrlParameters)
-
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
+
+  Vue.component('VueMarkdown', VueMarkdown)
+  Vue.mixin(vueUrlParameters)
 }

@@ -49,7 +49,7 @@
     </select> -->
 
     <div class="mb-2">
-      <input id="search" v-model="search" class="border-2 border-gray-400 hover:border-gray-500 px-2 py-2 rounded mt-4" placeholder="Search" type="search"> <!-- type="text" -->
+      <input id="search" v-model="search" class="border-2 border-gray-400 px-2 py-2 rounded mt-4" placeholder="Search" type="search"> <!-- type="text" -->
       <!-- <button type="button" v-on:click="clearSearch" class="button ~neutral !normal mb-1 ml-3">Clear</button> -->
     </div>
 
