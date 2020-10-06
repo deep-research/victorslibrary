@@ -7,9 +7,9 @@
     <!-- Opportunity for modularization of select elements -->
     <div>
       <div class="block md:inline">
-        <button v-on-clickaway="dropdown_closed" type="button" v-on:click="dropdown_open = !dropdown_open" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto px-2 py-1 rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mb-2 md:mb-0 md:mr-4">
+        <button v-on-clickaway="dropdown_closed" type="button" v-on:click="dropdown_open = !dropdown_open" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mb-2 md:mb-0 md:mr-4">
           <span>{{ filters.recordingtype }}</span>
-          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': dropdown_open, 'rotate-0': !dropdown_open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform -mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': dropdown_open, 'rotate-0': !dropdown_open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform -mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
         </button>
         <transition
             enter-active-class="transition duration-100 ease-out"
@@ -19,7 +19,7 @@
             leave-class="transform opacity-100 scale-100"
             leave-to-class="transform opacity-0 scale-95"
         >
-          <div v-if="dropdown_open" class="w-full md:w-auto relative md:absolute md:mt-2 mb-5 origin-top-right rounded-md shadow-lg w-48 z-40">
+          <div v-if="dropdown_open" class="md:w-auto relative md:absolute md:mt-2 mb-5 origin-top-right rounded-md shadow-lg z-40">
             <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
               <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='All Songs'; dropdown_open=false">All Songs</button>
               <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingtype='Recordings'; dropdown_open=false">Recordings</button>
@@ -38,8 +38,8 @@
         <option>Drafts</option>
         <option>Videos</option>
       </select> -->
-      <button type="button" v-on:click="reverse" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto px-2 py-1 rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mt-4 md:mt-0 mb-2 md:mb-0 md:mr-4">Reverse</button>
-      <button type="button" v-on:click="resetData" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto px-2 py-1 rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mt-4 md:mt-0">Refresh</button>
+      <!-- <button type="button" v-on:click="reverse" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mt-4 md:mt-0 mb-2 md:mb-0 md:mr-4">Reverse</button> -->
+      <button type="button" v-on:click="resetData" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mt-4 md:mt-0">Refresh</button>
     </div>
 
     <!-- <select v-model="filters.genre" style="margin-left: 20px">
@@ -49,7 +49,7 @@
     </select> -->
 
     <div class="mb-2">
-      <input id="search" v-model="search" class="border-2 border-gray-400 px-2 py-2 rounded mt-4" placeholder="Search" type="search"> <!-- type="text" -->
+      <input id="search" v-model="search" class="border-2 rounded border-gray-400 px-2 py-2 mt-4" placeholder="Search"> <!-- type="text" -->
       <!-- <button type="button" v-on:click="clearSearch" class="button ~neutral !normal mb-1 ml-3">Clear</button> -->
     </div>
 
@@ -125,9 +125,9 @@ export default {
       })
 
     },
-    reverse () {
-      this.isReversed = !this.isReversed
-    },
+    // reverse () {
+    //   this.isReversed = !this.isReversed
+    // },
     clearSearch () {
       this.search = ""
     },
@@ -142,18 +142,18 @@ export default {
     getUrlQuery () {
       const searchParams = {
         search: this.search,
-        reversed: this.isReversed,
+        // reversed: this.isReversed,
         type: this.filters.recordingtype
       }
       this.getFiltersFromUrl(searchParams)
       if (this.search !== searchParams.search) {
         this.search = searchParams.search
       }
-      if (searchParams.reversed == "false" && this.isReversed) {
-        this.isReversed = false
-      } else if (searchParams.reversed == "true" && !this.isReversed) {
-        this.isReversed = true
-      }
+      // if (searchParams.reversed == "false" && this.isReversed) {
+      //   this.isReversed = false
+      // } else if (searchParams.reversed == "true" && !this.isReversed) {
+      //   this.isReversed = true
+      // }
       const types = ["All Songs", "Recordings", "Demos", "Drafts", "Videos"];
       if (types.includes(searchParams.type) && this.filters.recordingtype !== searchParams.type) {
         this.filters.recordingtype = searchParams.type
@@ -162,7 +162,7 @@ export default {
   },
   data () {
     return {
-      isReversed: false,
+      // isReversed: false,
       songData: [],
       filterData: [],
       filters: {
@@ -182,13 +182,13 @@ export default {
     this.mounted = true
 
     if (this.$route.hash == "") {
-      if (sessionStorage.isReversed) {
-        if (sessionStorage.isReversed == 'true') {
-          this.isReversed = true
-        } else if (sessionStorage.isReversed == 'false') {
-          this.isReversed = false
-        }
-      }
+      // if (sessionStorage.isReversed) {
+      //   if (sessionStorage.isReversed == 'true') {
+      //     this.isReversed = true
+      //   } else if (sessionStorage.isReversed == 'false') {
+      //     this.isReversed = false
+      //   }
+      // }
       if (sessionStorage.search) {
         this.search = sessionStorage.search
       }
@@ -200,9 +200,9 @@ export default {
     }
   },
   watch: {
-    isReversed(value) {
-      sessionStorage.isReversed = value
-    },
+    // isReversed(value) {
+    //   sessionStorage.isReversed = value
+    // },
     search(value) {
       sessionStorage.search = value
     },
@@ -238,13 +238,13 @@ export default {
           filterCount = filterCount + 1
         })
 
-        if (this.isReversed) {
-          filterData.reverse()
-        }
+        // if (this.isReversed) {
+        //   filterData.reverse()
+        // }
 
         const searchParams = {
           search: this.search,
-          reversed: this.isReversed,
+          // reversed: this.isReversed,
           type: this.filters.recordingtype
         }
         this.updateUrlHash(searchParams)
