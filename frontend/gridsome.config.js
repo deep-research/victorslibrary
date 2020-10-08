@@ -34,7 +34,8 @@ module.exports = {
   templates: {
     StrapiSongs: [
       {
-        path: '/music/:slug',
+        path: '/:slug',
+        // path: '/music/:slug',
         component: './src/templates/Songs.vue'
       }
     ]

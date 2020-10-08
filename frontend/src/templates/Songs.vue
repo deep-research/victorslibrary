@@ -7,7 +7,7 @@
     <div v-else>
       <h1 class="mb-1">{{ $page.strapiSongs.title }}</h1>
       <h3>
-        By <g-link to="/music/">Strange People in Pain</g-link> <!-- style="text-decoration: none; color: black" -->
+        By Strange People in Pain <!-- style="text-decoration: none; color: black" -->
       </h3>
       
       <p v-if="$page.strapiSongs.explicit">⚠️ Warning: Contains explicit content.</p>

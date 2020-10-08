@@ -37,8 +37,8 @@
           <div>
             <h2>Best Recordings</h2>
             <ul class="mb-5">
-              <li><g-link class="no-underline hover:underline" to="/music/theyll-come-for-you">They'll Come For You</g-link></li>
-              <li><g-link class="no-underline hover:underline" to="/music/the-ritual">The Ritual</g-link></li>
+              <li><g-link class="no-underline hover:underline" to="/theyll-come-for-you">They'll Come For You</g-link></li>
+              <li><g-link class="no-underline hover:underline" to="/the-ritual">The Ritual</g-link></li>
             </ul>
           </div>
           <div>
