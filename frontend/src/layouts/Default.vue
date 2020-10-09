@@ -13,7 +13,7 @@
           <slot />
         </div>
         <div id="sidebar" class="mx-10 md:w-9/12 md:mx-auto lg:mr-20"> <!-- bg-purple-100 -->
-          <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic font-sans text-base">Official Website of The Lord Reverend Wizard of Alchemical Despair</p>
+          <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic font-sans text-base">The Official Website of The Lord Reverend Wizard of Alchemical Despair</p>
           <!-- <div class="my-5">
             <h2>Recent Posts</h2>
             <ul>
@@ -35,9 +35,12 @@
             </ul>
           </div> -->
           <div>
-            <h2>Best Recordings</h2>
+            <h2>Demo</h2>
             <ul class="mb-5">
               <li><g-link class="no-underline hover:underline" to="/theyll-come-for-you">They'll Come For You</g-link></li>
+              <li><g-link class="no-underline hover:underline" to="/the-ceremony-of-forgiveness">The Ceremony of Forgiveness</g-link></li>
+              <li><g-link class="no-underline hover:underline" to="/a-voice-in-the-distance">A Voice in the Distance</g-link></li>
+              <li><g-link class="no-underline hover:underline" to="/apathy-equals-freedom">Apathy = Freedom</g-link></li>
               <li><g-link class="no-underline hover:underline" to="/the-ritual">The Ritual</g-link></li>
             </ul>
           </div>
