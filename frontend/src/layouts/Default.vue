@@ -13,7 +13,7 @@
           <slot />
         </div>
         <div id="sidebar" class="mx-10 md:w-9/12 md:mx-auto lg:mr-20"> <!-- bg-purple-100 -->
-          <p class="border border-black w-56 pt-2 pb-3 pl-4 mb-5 italic font-sans text-base">The Official Website of The Lord Reverend Wizard of Alchemical Despair</p>
+          <p class="border border-black w-56 pt-2 pb-3 px-4 mb-5 italic font-sans text-base">The Official Website of The Lord Reverend Wizard of Alchemical Despair</p>
           <!-- <div class="my-5">
             <h2>Recent Posts</h2>
             <ul>
