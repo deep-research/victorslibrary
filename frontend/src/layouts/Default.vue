@@ -8,7 +8,7 @@
         </div>
         <Navbar />
       </header>
-      <div class="lg:flex lg:flex-row lg:justify-between md:mt-5">
+      <div class="lg:flex lg:flex-row lg:justify-between">
         <div id="slot-container" class="mx-10 md:w-9/12 md:mx-auto mb-5 lg:mb-0 lg:mr-20 lg:ml-20"> <!-- bg-blue-100 -->
           <slot />
         </div>
