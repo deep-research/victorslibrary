@@ -40,6 +40,10 @@
     "custom": {
       "type": "string",
       "unique": false
+    },
+    "genre": {
+      "via": "songs",
+      "model": "genre"
     }
   }
 }

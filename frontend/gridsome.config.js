@@ -15,7 +15,7 @@ module.exports = {
       options: {
         apiURL: 'http://localhost:1337',
         queryLimit: 1000, // Defaults to 100
-        contentTypes: ['songs', 'recordings'],
+        contentTypes: ['songs', 'recordings', 'genres', 'videos'],
         // Possibility to login with a Strapi user,
         // when content types are not publicly available (optional).
         loginData: {

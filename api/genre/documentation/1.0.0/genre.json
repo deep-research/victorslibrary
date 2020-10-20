@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/songs": {
+    "/genres": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Song"
+                    "$ref": "#/components/schemas/Genre"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Song"
+          "Genre"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Song"
+                  "$ref": "#/components/schemas/Genre"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Song"
+          "Genre"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSong"
+                "$ref": "#/components/schemas/NewGenre"
               }
             }
           }
         }
       }
     },
-    "/songs/count": {
+    "/genres/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Song"
+          "Genre"
         ],
         "parameters": []
       }
     },
-    "/songs/{id}": {
+    "/genres/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Song"
+                  "$ref": "#/components/schemas/Genre"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Song"
+          "Genre"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Song"
+                  "$ref": "#/components/schemas/Genre"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Song"
+          "Genre"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSong"
+                "$ref": "#/components/schemas/NewGenre"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Song"
+          "Genre"
         ],
         "parameters": [
           {
@@ -514,108 +514,60 @@
   },
   "components": {
     "schemas": {
-      "Song": {
+      "Genre": {
         "required": [
-          "id",
-          "title",
-          "slug"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
+          "name": {
             "type": "string"
           },
-          "description": {
+          "search": {
             "type": "string"
           },
-          "lyrics": {
-            "type": "string"
-          },
-          "credits": {
-            "type": "string"
-          },
-          "explicit": {
-            "type": "boolean"
-          },
-          "recordings": {
-            "required": [
-              "id",
-              "title",
-              "url",
-              "length",
-              "index"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string"
-              },
-              "multitrack": {
-                "type": "boolean"
-              },
-              "length": {
-                "type": "time"
-              },
-              "index": {
-                "type": "integer"
-              }
-            }
-          },
-          "videos": {
-            "required": [
-              "id",
-              "title",
-              "url",
-              "index"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string"
-              },
-              "length": {
-                "type": "time"
-              },
-              "index": {
-                "type": "integer"
-              }
-            }
-          },
-          "slug": {
-            "type": "string"
-          },
-          "custom": {
-            "type": "string"
-          },
-          "genre": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "search": {
-                "type": "string"
-              },
-              "songs": {
-                "type": "array",
-                "items": {
+          "songs": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title",
+                "slug"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "lyrics": {
+                  "type": "string"
+                },
+                "credits": {
+                  "type": "string"
+                },
+                "explicit": {
+                  "type": "boolean"
+                },
+                "recordings": {
+                  "type": "string"
+                },
+                "videos": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "custom": {
+                  "type": "string"
+                },
+                "genre": {
                   "type": "string"
                 }
               }
@@ -623,41 +575,19 @@
           }
         }
       },
-      "NewSong": {
-        "required": [
-          "title",
-          "slug"
-        ],
+      "NewGenre": {
         "properties": {
-          "title": {
+          "name": {
             "type": "string"
           },
-          "description": {
+          "search": {
             "type": "string"
           },
-          "lyrics": {
-            "type": "string"
-          },
-          "credits": {
-            "type": "string"
-          },
-          "explicit": {
-            "type": "boolean"
-          },
-          "recordings": {
-            "type": "string"
-          },
-          "videos": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "string"
-          },
-          "custom": {
-            "type": "string"
-          },
-          "genre": {
-            "type": "string"
+          "songs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       }
@@ -665,7 +595,7 @@
   },
   "tags": [
     {
-      "name": "Song"
+      "name": "Genre"
     }
   ]
 }
