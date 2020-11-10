@@ -8,32 +8,6 @@
     <!-- Opportunity for modularization of select elements -->
     <div>
       <div class="block md:inline-block">
-        <button v-on-clickaway="type_dropdown" type="button" v-on:click="type_open = !type_open" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mb-2 md:mb-0 md:mr-4">
-          <span>{{ filters.recordingType }}</span>
-          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': type_open, 'rotate-0': !type_open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform -mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-        </button>
-        <transition
-            enter-active-class="transition duration-100 ease-out"
-            leave-active-class="transition duration-75 ease-in"
-            enter-class="transform opacity-0 scale-95"
-            enter-to-class="transform opacity-100 scale-100"
-            leave-class="transform opacity-100 scale-100"
-            leave-to-class="transform opacity-0 scale-95"
-        >
-          <div v-if="type_open" class="md:w-auto relative md:absolute md:mt-2 mb-5 origin-top-right rounded-md shadow-lg z-40">
-            <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
-              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingType='All Songs'; type_open=false">All Songs</button>
-              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingType='Recordings'; type_open=false">Recordings</button>
-              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingType='Demos'; type_open=false">Demos</button>
-              <!-- <hr class="my-2" /> -->
-              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingType='Drafts'; type_open=false">Drafts</button>
-              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingType='Videos'; type_open=false">Videos</button>
-            </div>
-          </div>
-        </transition>
-      </div>
-
-      <div class="block md:inline-block">
         <button v-on-clickaway="genre_dropdown" type="button" v-on:click="genre_open = !genre_open" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mb-2 md:mb-0 md:mr-4 mt-4 md:mt-0">
           <span>{{ filters.genreType }}</span>
           <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': genre_open, 'rotate-0': !genre_open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform -mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -56,6 +30,32 @@
               <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.genreType='Hard Rock'; genre_open=false">Hard Rock</button>
               <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.genreType='Drone'; genre_open=false">Drone</button>
               <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.genreType='Ballad'; genre_open=false">Ballad</button>
+            </div>
+          </div>
+        </transition>
+      </div>
+      
+      <div class="block md:inline-block">
+        <button v-on-clickaway="type_dropdown" type="button" v-on:click="type_open = !type_open" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mb-2 md:mb-0 md:mr-4">
+          <span>{{ filters.recordingType }}</span>
+          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': type_open, 'rotate-0': !type_open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform -mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+        <transition
+            enter-active-class="transition duration-100 ease-out"
+            leave-active-class="transition duration-75 ease-in"
+            enter-class="transform opacity-0 scale-95"
+            enter-to-class="transform opacity-100 scale-100"
+            leave-class="transform opacity-100 scale-100"
+            leave-to-class="transform opacity-0 scale-95"
+        >
+          <div v-if="type_open" class="md:w-auto relative md:absolute md:mt-2 mb-5 origin-top-right rounded-md shadow-lg z-40">
+            <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingType='All Types'; type_open=false">All Types</button>
+              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingType='Recordings'; type_open=false">Recordings</button>
+              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingType='Demos'; type_open=false">Demos</button>
+              <!-- <hr class="my-2" /> -->
+              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingType='Drafts'; type_open=false">Drafts</button>
+              <button type="button" class="w-full text-left block px-4 py-2 text-sm font-semibold bg-transparent rounded-sm md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" @click="filters.recordingType='Videos'; type_open=false">Videos</button>
             </div>
           </div>
         </transition>
@@ -119,7 +119,7 @@ export default {
     fetchData() {
       this.$page.songs.edges.map((edge) => {
         let song = edge.node
-        // song.recordingType = "All Songs"
+        // song.recordingType = "All Types"
 
         if (song.videos.length > 0) {
           song.hasVideo = true
@@ -179,7 +179,7 @@ export default {
       // } else if (searchParams.reversed == "true" && !this.isReversed) {
       //   this.isReversed = true
       // }
-      const types = ["All Songs", "Recordings", "Demos", "Drafts", "Videos"];
+      const types = ["All Types", "Recordings", "Demos", "Drafts", "Videos"];
       if (types.includes(searchParams.type) && this.filters.recordingType !== searchParams.type) {
         this.filters.recordingType = searchParams.type
       }
@@ -196,7 +196,7 @@ export default {
       songData: [],
       filterData: [],
       filters: {
-        recordingType: "All Songs",
+        recordingType: "All Types",
         genreType: "All Styles"
       },
       search: "",
@@ -251,7 +251,7 @@ export default {
     createFilter () {
       if (this.mounted) {
         let filterData = this.songData
-        
+
         for (let [key, value] of Object.entries(this.filters)) {
           if (value.startsWith("All")) {
             continue

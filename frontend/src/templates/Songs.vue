@@ -23,7 +23,7 @@
           <h3 v-if="recordingData.length > 1">{{ recordingCounter = recordingCounter + 1 }}. {{ recording.title }}</h3>
           <!-- <ClientOnly> -->
             <!-- preload="auto" -->
-            <audio :ref="`player-${recording.url}`" @play="stopOthers(recording.url)" controls>
+            <audio :ref="`player-${recording.url}`" @play="stopOthers(recording.url)" controlsList="nodownload" controls>
               <source :src="recording.url" type="audio/mp3" />
               Your browser does not support the audio element.
             </audio>
@@ -37,7 +37,7 @@
           <h3 v-if="$page.strapiSongs.videos.length > 1">{{ videoCounter = videoCounter + 1 }}. {{ video.title }}</h3>
           <!-- <ClientOnly> -->
             <!-- preload="auto" -->
-            <video :ref="`player-${video.url}`" @play="stopOthers(video.url)" controls>
+            <video :ref="`player-${video.url}`" @play="stopOthers(video.url)" controlsList="nodownload" controls>
               <source :src="video.url" type="video/mp4">
               Your browser does not support the video element.
             </video>
