@@ -36,7 +36,7 @@
       </div>
       
       <div class="block md:inline-block">
-        <button v-on-clickaway="type_dropdown" type="button" v-on:click="type_open = !type_open" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mb-2 md:mb-0 md:mr-4">
+        <button v-on-clickaway="type_dropdown" type="button" v-on:click="type_open = !type_open" class="text-left px-4 py-2 text-sm font-semibold w-full md:w-auto rounded-sm hover:bg-gray-300 focus:bg-gray-200 bg-gray-200 block md:inline mb-2 md:mb-0 md:mr-4 mt-4 md:mt-0">
           <span>{{ filters.recordingType }}</span>
           <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': type_open, 'rotate-0': !type_open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform -mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
         </button>
