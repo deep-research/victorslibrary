@@ -8,7 +8,7 @@
       <p><g-link class="no-underline hover:underline" to="/">Songs</g-link> / <b>{{ $page.strapiSongs.title }}</b></p>
       <h1 class="mb-1">{{ $page.strapiSongs.title }}</h1>
       <h3>
-        By Strange People in Pain <!-- style="text-decoration: none; color: black" -->
+        By Reenchantment <!-- style="text-decoration: none; color: black" -->
       </h3>
       
       <p v-if="$page.strapiSongs.explicit">⚠️ Warning: Contains explicit content.</p>

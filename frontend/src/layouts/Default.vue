@@ -47,7 +47,7 @@
           <div>
             <h2>Social Media</h2>
             <ul class="mb-5">
-              <li><a class="no-underline hover:underline" href="https://strangepeopleinpain.bandcamp.com/" target="_blank">Bandcamp</a></li>
+              <li><a class="no-underline hover:underline" href="https://reenchantment.bandcamp.com/" target="_blank">Bandcamp</a></li>
               <li><a class="no-underline hover:underline" href="https://www.youtube.com/user/reverendofdespair/" target="_blank">YouTube</a></li>
               <li><a class="no-underline hover:underline" href="https://twitter.com/evilrockmusic/" target="_blank">Twitter</a></li>
               <li><a class="no-underline hover:underline" href="https://www.facebook.com/evilrockmusic/" target="_blank">Facebook</a></li>
