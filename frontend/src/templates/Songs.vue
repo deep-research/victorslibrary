@@ -12,12 +12,12 @@
       </h3>
       
       <p v-if="$page.strapiSongs.explicit">⚠️ Warning: Contains explicit content.</p>
-      
+
+      <h2>Style</h2>
+      <p>{{$page.strapiSongs.genre.name}}</p>
+
       <h2>Description</h2>
       <VueMarkdown v-bind:source="$page.strapiSongs.description"></VueMarkdown>
-
-      <h2>Genre</h2>
-      <p>{{$page.strapiSongs.genre.name}}</p>
 
       <!-- Opportunity for modularization of media elements -->
       <div class="audio"> <!-- style="max-width: 550px;" -->
