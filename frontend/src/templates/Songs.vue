@@ -13,8 +13,11 @@
       
       <p v-if="$page.strapiSongs.explicit">⚠️ Warning: Contains explicit content.</p>
       
-      <h2>Description:</h2>
+      <h2>Description</h2>
       <VueMarkdown v-bind:source="$page.strapiSongs.description"></VueMarkdown>
+
+      <h2>Genre</h2>
+      <p>{{$page.strapiSongs.genre.name}}</p>
 
       <!-- Opportunity for modularization of media elements -->
       <div class="audio"> <!-- style="max-width: 550px;" -->
@@ -45,10 +48,10 @@
         </div>
       </div>
       
-      <h2 v-if="$page.strapiSongs.lyrics">Lyrics:</h2>
+      <h2 v-if="$page.strapiSongs.lyrics">Lyrics</h2>
       <VueMarkdown v-bind:source="$page.strapiSongs.lyrics"></VueMarkdown>
       
-      <h2>Credits:</h2>
+      <h2>Credits</h2>
       <VueMarkdown v-bind:source="$page.strapiSongs.credits"></VueMarkdown>
     </div>
   </Layout>
@@ -61,6 +64,9 @@ query ($id: ID!) {
     lyrics
     explicit
     credits
+    genre {
+      name
+    }
     description
     custom
     recordings {
@@ -119,15 +125,15 @@ export default {
 
         if (this.isDemo) {
           if (this.recordingData.length > 1) {
-            this.recordingsLabel = "Demos:"
+            this.recordingsLabel = "Demos"
           } else {
-            this.recordingsLabel = "Demo:"
+            this.recordingsLabel = "Demo"
           }
         } else {
           if (this.recordingData.length > 1) {
-            this.recordingsLabel = "Recordings:"
+            this.recordingsLabel = "Recordings"
           } else {
-            this.recordingsLabel = "Recording:"
+            this.recordingsLabel = "Recording"
           }
         }
       }
