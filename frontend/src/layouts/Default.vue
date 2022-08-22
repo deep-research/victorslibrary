@@ -35,13 +35,14 @@
             </ul>
           </div> -->
           <div>
-            <h2>Demo</h2>
+            <h2>Favorites</h2>
             <ul class="mb-5">
               <li><g-link class="no-underline hover:underline" to="/theyll-come-for-you">They'll Come For You</g-link></li>
               <li><g-link class="no-underline hover:underline" to="/the-ceremony-of-forgiveness">The Ceremony of Forgiveness</g-link></li>
               <li><g-link class="no-underline hover:underline" to="/a-voice-in-the-distance">A Voice in the Distance</g-link></li>
               <li><g-link class="no-underline hover:underline" to="/apathy-equals-freedom">Apathy = Freedom</g-link></li>
               <li><g-link class="no-underline hover:underline" to="/the-ritual">The Ritual</g-link></li>
+              <li><g-link class="no-underline hover:underline" to="/cloudships-from-magonia">Cloudships From Magonia</g-link></li>
             </ul>
           </div>
           <div>
