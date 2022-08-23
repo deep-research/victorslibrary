@@ -27,9 +27,14 @@
     <p>Music by Victor Fisher</p>
 
     <h2>Contact</h2>
-    <div class="mb-6">
-      <g-link class="inline-block text-gray-900 bg-gray-200 no-underline rounded-sm hover:bg-gray-300 hover:no-underline px-4 py-2 text-sm font-semibold bg-transparent hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="https://bandcamp.com/contact?b=1631569890">Bandcamp</g-link>
-    </div>
+    <ul>
+      <li>
+        <g-link to="https://bandcamp.com/contact?b=1631569890" class="no-underline hover:underline">Bandcamp Form</g-link>
+      </li>
+      <li>
+        <a href="http://reenchantment.band/" class="no-underline hover:underline">Reenchantment.Band</a>
+      </li>
+    </ul>
   </Layout>
 </template>
 
