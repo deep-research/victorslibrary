@@ -5,10 +5,10 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "Victor's Library",
-  siteUrl: 'https://victorslibrary.com',
-  siteDescription: 'Research on Music and Religion',
-  titleTemplate: "Victor's Library",
+  siteName: "Reenchantment",
+  siteUrl: 'https://reenchantment.band',
+  siteDescription: 'Rock Music and Occult Research',
+  titleTemplate: "Reenchantment",
   plugins: [
     {
       use: '@gridsome/source-strapi',

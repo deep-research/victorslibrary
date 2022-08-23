@@ -20,8 +20,8 @@
 
           <!-- CURRENT LINKS -->
           <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/')}" class="no-underline rounded-sm hover:bg-gray-300 hover:no-underline px-4 py-2 mt-3 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/">Songs</g-link>
+          <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/demo/')}" class="no-underline rounded-sm hover:bg-gray-300 hover:no-underline px-4 py-2 mt-3 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/demo/">Demo</g-link>   
           <g-link class="no-underline rounded-sm hover:bg-gray-300 hover:no-underline px-4 py-2 mt-3 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="https://bandcamp.com/contact?b=1631569890">Contact</g-link>
-          <!-- <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/music/')}" class="no-underline rounded-sm hover:bg-gray-300 hover:no-underline px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/music/">Music</g-link>    -->
 
           <!-- DROPDOWN -->
           <!-- <div v-on-clickaway="dropdown_closed" class="relative">
