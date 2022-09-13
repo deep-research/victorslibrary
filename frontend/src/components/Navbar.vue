@@ -19,8 +19,9 @@
           <g-link class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/music/">Music</g-link> -->
 
           <!-- CURRENT LINKS -->
-          <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/')}" class="no-underline rounded-sm hover:bg-gray-300 hover:no-underline px-4 py-2 mt-3 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/">Songs</g-link>
-          <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/demo/')}" class="no-underline rounded-sm hover:bg-gray-300 hover:no-underline px-4 py-2 mt-3 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/demo/">Demo</g-link>   
+          <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/')}" class="no-underline rounded-sm hover:bg-gray-300 hover:no-underline px-4 py-2 mt-3 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/">All Songs</g-link>
+          <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/short-demo/')}" class="no-underline rounded-sm hover:bg-gray-300 hover:no-underline px-4 py-2 mt-3 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/short-demo/">Short Demo</g-link>
+          <g-link :class="{'text-gray-900 bg-gray-200': currentPage('/light-demo/')}" class="no-underline rounded-sm hover:bg-gray-300 hover:no-underline px-4 py-2 mt-3 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="/light-demo/">Light Demo</g-link>   
           <g-link class="no-underline rounded-sm hover:bg-gray-300 hover:no-underline px-4 py-2 mt-3 text-sm font-semibold bg-transparent md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline" to="https://bandcamp.com/contact?b=1631569890">Contact</g-link>
 
           <!-- DROPDOWN -->

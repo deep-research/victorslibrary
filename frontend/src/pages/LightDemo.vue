@@ -4,9 +4,16 @@
     <h3>
       By Reenchantment <!-- style="text-decoration: none; color: black" -->
     </h3>
-    
-    <h2>Style</h2>
-    <p>Psychedelic Rock and Doom Metal</p>
+
+    <h2>Version</h2>
+    <ul>
+      <li>
+        <g-link to="/short-demo/" class="no-underline hover:underline">Short Demo</g-link>
+      </li>
+      <li>
+        <g-link to="/light-demo/" class="no-underline hover:underline font-bold">Light Demo</g-link>
+      </li>
+    </ul>
 
     <!-- Opportunity for modularization of media elements -->
     <div> <!-- style="max-width: 550px;" -->
@@ -45,19 +52,19 @@ export default {
       recordingData: 
         [
           {
-            title: "They'll Come For You (Short Version)",
-            url: "https://victorslibrary.s3.us-east-2.amazonaws.com/music/Theyll+Come+For+You/They'll+Come+For+You+(Short+Version).mp3",
+            title: "They'll Come For You",
+            url: "https://victorslibrary.s3.amazonaws.com/music/Theyll+Come+For+You/Theyll+Come+For+You+(Mermaid+Version).mp3",
             page: "/theyll-come-for-you"
           },
           {
-            title: "Apathy = Freedom (Short Version)",
-            url: "https://victorslibrary.s3.us-east-2.amazonaws.com/music/Apathy+%3D+Freedom/Apathy+%3D+Freedom+(Short+Version).mp3",
+            title: "Apathy = Freedom",
+            url: "https://victorslibrary.s3.amazonaws.com/music/Apathy+%3D+Freedom/Apathy+%3D+Freedom.mp3",
             page: "/apathy-equals-freedom"
           },
           {
-            title: "The Ritual (Short Version)",
-            url: "https://victorslibrary.s3.us-east-2.amazonaws.com/music/The+Ritual/The+Ritual+(Short+Version).mp3",
-            page: "/the-ritual"
+            title: "Cloudships From Magonia",
+            url: "https://victorslibrary.s3.us-east-2.amazonaws.com/music/Cloudships+From+Magonia/Cloudships+from+Magonia.mp3",
+            page: "/cloudships-from-magonia"
           }
         ]
     }
