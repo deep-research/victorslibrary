@@ -3,7 +3,7 @@
     <!-- https://tailwindcomponents.com/component/responsive-navbar-with-dropdown -->
     <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
       <div class="flex flex-col max-w-screen-xl mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-        <div :class="{'mb-6': !mobile_open}" v-on:click="mobile_open = !mobile_open" class="cursor-pointer mx-3 flex flex-row items-center justify-between md:hidden">
+        <div :class="{'mb-6': !mobile_open}" v-on:click="mobile_open = !mobile_open" class="cursor-pointer mx-4 flex flex-row items-center justify-between md:hidden">
           <a href="#" class="no-underline px-0 text-lg font-semibold tracking-widest text-gray-900 uppercase dark-mode:text-white md:hidden focus:outline-none focus:shadow-outline">Menu</a> <!-- v-on:click="$event.target.blur()" -->
           <button class="md:hidden focus:outline-none focus:shadow-outline">
             <svg  fill="black" viewBox="0 0 20 20" class="w-6 h-6"> <!-- fill="currentColor" -->

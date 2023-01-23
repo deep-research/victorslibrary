@@ -9,7 +9,7 @@
         <Navbar />
       </header>
       <div class="lg:flex lg:flex-row lg:justify-between max-w-6xl m-auto	">
-        <div id="slot-container" class="mx-3 md:w-9/12 md:mx-auto mb-5 lg:mb-0 lg:mr-10 lg:ml-10"> <!-- bg-blue-100 -->
+        <div id="slot-container" class="mx-4 md:w-9/12 md:mx-auto mb-5 lg:mb-0 lg:mr-10 lg:ml-10"> <!-- bg-blue-100 -->
           <slot />
         </div>
         <div id="sidebar" class="mx-10 md:w-9/12 md:mx-auto lg:mr-10"> <!-- bg-purple-100 -->
