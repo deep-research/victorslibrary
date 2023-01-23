@@ -8,11 +8,11 @@
         </div>
         <Navbar />
       </header>
-      <div class="lg:flex lg:flex-row lg:justify-between">
-        <div id="slot-container" class="mx-10 md:w-9/12 md:mx-auto mb-5 lg:mb-0 lg:mr-20 lg:ml-20"> <!-- bg-blue-100 -->
+      <div class="lg:flex lg:flex-row lg:justify-between max-w-6xl m-auto	">
+        <div id="slot-container" class="mx-10 md:w-9/12 md:mx-auto mb-5 lg:mb-0 lg:mr-10 lg:ml-10"> <!-- bg-blue-100 -->
           <slot />
         </div>
-        <div id="sidebar" class="mx-10 md:w-9/12 md:mx-auto lg:mr-20"> <!-- bg-purple-100 -->
+        <div id="sidebar" class="mx-10 md:w-9/12 md:mx-auto lg:mr-10"> <!-- bg-purple-100 -->
           <p class="border border-black w-56 pt-2 pb-3 px-4 mb-5 italic font-sans text-base">The Official Website of The Lord Reverend Wizard of Alchemical Despair</p>
           <!-- <div class="my-5">
             <h2>Recent Posts</h2>
