@@ -2,9 +2,9 @@
   <nav>
     <!-- https://tailwindcomponents.com/component/responsive-navbar-with-dropdown -->
     <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
-      <div class="flex flex-col max-w-screen-xl px-6 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+      <div class="flex flex-col max-w-screen-xl mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div :class="{'mb-6': !mobile_open}" v-on:click="mobile_open = !mobile_open" class="cursor-pointer mx-3 flex flex-row items-center justify-between md:hidden">
-          <a href="#" class="no-underline px-1 text-lg font-semibold tracking-widest text-gray-900 uppercase dark-mode:text-white md:hidden focus:outline-none focus:shadow-outline">Menu</a> <!-- v-on:click="$event.target.blur()" -->
+          <a href="#" class="no-underline px-0 text-lg font-semibold tracking-widest text-gray-900 uppercase dark-mode:text-white md:hidden focus:outline-none focus:shadow-outline">Menu</a> <!-- v-on:click="$event.target.blur()" -->
           <button class="md:hidden focus:outline-none focus:shadow-outline">
             <svg  fill="black" viewBox="0 0 20 20" class="w-6 h-6"> <!-- fill="currentColor" -->
               <!-- <path v-if="!mobile_open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path> -->
