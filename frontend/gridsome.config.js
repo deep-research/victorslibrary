@@ -7,7 +7,7 @@
 module.exports = {
   siteName: "Reenchantment",
   siteUrl: 'https://reenchantment.band',
-  siteDescription: 'Rock Music and Occult Research',
+  siteDescription: 'Magical Rock Music by Victor Fisher',
   titleTemplate: "Reenchantment",
   plugins: [
     {

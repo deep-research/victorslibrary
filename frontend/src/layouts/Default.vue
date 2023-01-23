@@ -46,13 +46,14 @@
             </ul>
           </div>
           <div>
-            <h2>Social Media</h2>
+            <h2>Links</h2>
             <ul class="mb-5">
+              <li><a class="no-underline hover:underline" href="https://reenchantment.band/" target="_blank">Main Website</a></li>
               <li><a class="no-underline hover:underline" href="https://reenchantment.bandcamp.com/" target="_blank">Bandcamp</a></li>
-              <li><a class="no-underline hover:underline" href="https://www.youtube.com/user/reverendofdespair/" target="_blank">YouTube</a></li>
-              <li><a class="no-underline hover:underline" href="https://twitter.com/evilrockmusic/" target="_blank">Twitter</a></li>
-              <li><a class="no-underline hover:underline" href="https://www.facebook.com/evilrockmusic/" target="_blank">Facebook</a></li>
-              <li><a class="no-underline hover:underline" href="https://www.instagram.com/evilrockmusic/" target="_blank">Instagram</a></li>
+              <li><a class="no-underline hover:underline" href="https://www.youtube.com/@reenchantment/" target="_blank">YouTube</a></li>
+              <li><a class="no-underline hover:underline" href="https://twitter.com/magicrockmusic/" target="_blank">Twitter</a></li>
+              <li><a class="no-underline hover:underline" href="https://www.facebook.com/reenchantmentmusic/" target="_blank">Facebook</a></li>
+              <li><a class="no-underline hover:underline" href="https://www.instagram.com/reenchantmentmusic/" target="_blank">Instagram</a></li>
             </ul>
           </div>
           <div>
