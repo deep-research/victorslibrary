@@ -4,10 +4,12 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+// Use Node 16
+
 module.exports = {
   siteName: "Reenchantment",
   siteUrl: 'https://reenchantment.band',
-  siteDescription: 'Magical Rock Music by Victor Fisher',
+  siteDescription: 'Intuitive Rock Music by Victor Fisher',
   titleTemplate: "Reenchantment",
   plugins: [
     {
