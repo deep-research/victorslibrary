@@ -48,7 +48,7 @@
           <div>
             <h2>Links</h2>
             <ul class="mb-5">
-              <li><a class="no-underline hover:underline" href="https://reenchantment.band/" target="_blank">Current Website</a></li>
+              <li><a class="no-underline hover:underline" href="https://victorsarchive.com/" target="_blank">Newer Website</a></li>
               <li><a class="no-underline hover:underline" href="https://reenchantment.bandcamp.com/" target="_blank">Bandcamp</a></li>
               <li><a class="no-underline hover:underline" href="https://www.youtube.com/@reenchantment/" target="_blank">YouTube</a></li>
               <li><a class="no-underline hover:underline" href="https://twitter.com/magicrockmusic/" target="_blank">Twitter</a></li>
